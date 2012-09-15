@@ -28,12 +28,14 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="Button" Height="61" HorizontalAlignment="Left" Margin="66,214,0,0" Name="button1" VerticalAlignment="Top" Width="133" FontSize="20" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,19,0,0" Name="textBlock1" Text="TextBlock" VerticalAlignment="Top" />
-            <ListBox Height="108" HorizontalAlignment="Left" Margin="20,55,0,0" Name="listBox1" VerticalAlignment="Top" Width="306" Background="White">
-                <ListBoxItem Content="Vietnam" DataContext="{Binding}" />
-                <ListBoxItem Content="Singapore" />
-            </ListBox>
+            <Button Content="Slow" Height="81" HorizontalAlignment="Left" Margin="248,331,0,0" Name="btnSlow" VerticalAlignment="Top" Width="183" FontSize="20" Click="btnSlow_Click" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,19,0,0" Name="textBlock1" Text="Country" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,119,0,0" Name="textBlock2" Text="City" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,218,0,0" Name="textBlock3" Text="Street" VerticalAlignment="Top" />
+            <ListBoxItem Content="Vietnam" DataContext="{Binding}" Margin="20,55,25,514" Name="lbCountry" Background="White" />
+            <ListBoxItem Background="White" Content="Vietnam" DataContext="{Binding}" Margin="20,155,25,414" Name="lbCity" />
+            <ListBoxItem Background="White" Content="Vietnam" DataContext="{Binding}" Margin="20,254,25,315" Name="lbStreet" />
+            <Button Content="Busy" FontSize="20" Height="81" HorizontalAlignment="Left" Margin="20,331,0,0" Name="btnBusy" VerticalAlignment="Top" Width="189" Click="btnTrafficJam_Click" />
         </Grid>
     </Grid>
  
