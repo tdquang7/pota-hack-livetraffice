@@ -176,6 +176,9 @@
     <None Include="Service References\LiveTrafficeService\MobileService.disco" />
     <None Include="Service References\LiveTrafficeService\configuration91.svcinfo" />
     <None Include="Service References\LiveTrafficeService\configuration.svcinfo" />
+    <None Include="Service References\LiveTrafficeService\MobileService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\LiveTrafficeService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
