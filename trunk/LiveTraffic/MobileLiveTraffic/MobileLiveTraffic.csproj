@@ -116,16 +116,36 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Resources\Icons\ApplicationBar\Directions.png" />
-    <Resource Include="Resources\Icons\ApplicationBar\Location.png" />
-    <Resource Include="Resources\Icons\ApplicationBar\Mode.png" />
-    <Resource Include="Resources\Icons\ApplicationBar\Route.png" />
-    <Resource Include="Resources\Icons\Route\SearchBlack.png" />
-    <Resource Include="Resources\Icons\Route\SearchWhite.png" />
-    <Resource Include="Resources\Icons\Zoom\ZoomIn_Black.png" />
-    <Resource Include="Resources\Icons\Zoom\ZoomIn_White.png" />
-    <Resource Include="Resources\Icons\Zoom\ZoomOut_Black.png" />
-    <Resource Include="Resources\Icons\Zoom\ZoomOut_White.png" />
+    <Content Include="Resources\Icons\ApplicationBar\Directions.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\ApplicationBar\Location.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\ApplicationBar\Mode.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\ApplicationBar\Route.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\Route\SearchBlack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\Route\SearchWhite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\Icons\Zoom\ZoomIn_Black.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\Zoom\ZoomIn_White.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\Zoom\ZoomOut_Black.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\Zoom\ZoomOut_White.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

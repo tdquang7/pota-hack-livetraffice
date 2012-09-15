@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Controls.Maps;
+using Microsoft.Phone.Shell;
 
 namespace MobileLiveTraffic
 {
@@ -22,6 +23,8 @@ namespace MobileLiveTraffic
         public MainPage()
         {
             InitializeComponent();
+
+           // LoadApplicationBarImages();
         }
 
         private double _zoom;

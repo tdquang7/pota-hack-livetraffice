@@ -67,7 +67,7 @@
         </Border>
 
         <!-- Visual States -->
-        <VisualStateManager.VisualStateGroups>
+        <!--<VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="RouteStates">
                 <VisualStateGroup.Transitions>
                     <VisualTransition To="ShowRoute" />
@@ -126,7 +126,7 @@
                     </Storyboard>
                 </VisualState>
             </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
+        </VisualStateManager.VisualStateGroups>-->
     </Canvas>
 
     <!-- Application Bar -->
