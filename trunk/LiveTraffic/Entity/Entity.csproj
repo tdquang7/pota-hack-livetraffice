@@ -40,7 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crossroad.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="Road.cs" />
+    <Compile Include="Segment.cs" />
+    <Compile Include="TrafficReport.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
