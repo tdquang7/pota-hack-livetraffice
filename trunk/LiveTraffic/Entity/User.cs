@@ -39,33 +39,6 @@ namespace Entity
             }
 
             return false;
-        }
-
-        public void UpdateStreetStatus(string username, string country, string city, string district, string street, 
-                                    double latitude, double longitude, string status)
-        {
-            if (_connect())
-            {
-                string sql = "insert into TrafficReport(Reporter, ReportTime, Latitude, Longtitude, Status, SegmentID, Country, City, District, Street) " + 
-                    "values(@Reporter, @ReportTime, @Latitude, @Longtitude, @Status, @SegmentID, @Country, @City, @District, @Street)";
-
-                SqlCommand cmd = new SqlCommand(sql, _con);
-                cmd.Parameters.Add(new SqlParameter("@Reporter", SqlDbType.NVarChar)).Value = username;
-                cmd.Parameters.Add(new SqlParameter("@ReportTime", SqlDbType.Date)).Value = DateTime.Now;
-                cmd.Parameters.Add(new SqlParameter("@Latitude", SqlDbType.Real)).Value = longitude;
-                cmd.Parameters.Add(new SqlParameter("@Longtitude", SqlDbType.Real)).Value = username;
-                cmd.Parameters.Add(new SqlParameter("@Status", SqlDbType.NVarChar)).Value = status;
-                cmd.Parameters.Add(new SqlParameter("@SegmentID", SqlDbType.NVarChar)).Value = ""; // Temporary not used
-                cmd.Parameters.Add(new SqlParameter("@Country", SqlDbType.NVarChar)).Value = country;
-                cmd.Parameters.Add(new SqlParameter("@City", SqlDbType.NVarChar)).Value = city;
-                cmd.Parameters.Add(new SqlParameter("@District", SqlDbType.NVarChar)).Value = district;
-                cmd.Parameters.Add(new SqlParameter("@Street", SqlDbType.NVarChar)).Value = street;
-
-                bool result = cmd.ExecuteNonQuery() > 0;
-            }
-            else{
-                throw new Exception("Cannot connect to server");
-            }
-        }
+        }        
     }
 }
