@@ -47,7 +47,14 @@ namespace MobileLiveTraffic
                 update.IsEnabled = false;
                 updateuser.IsEnabled = false;
             }
+
+            if (((App)App.Current).SearchMode != null)
+            {
+                LiveTrafficService.MobileServiceClient service = new LiveTrafficService.MobileServiceClient();
+                MessageBox.Show(((App)App.Current).SearchMode);
+            }
         }
+
 
         private MapMode _lastMode;
         private GeoCoordinateWatcher _gpsWatcher;

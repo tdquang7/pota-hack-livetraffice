@@ -31,14 +31,15 @@
             <!--<Grid.Background>
                 <ImageBrush />
             </Grid.Background>-->
-            <TextBox Height="76" HorizontalAlignment="Left" Margin="10,110,0,0" Name="txtUsername" Text="" VerticalAlignment="Top" Width="422" TextChanged="txtUsername_TextChanged" />
-            <TextBox Height="76" HorizontalAlignment="Left" Margin="10,220,0,0" Name="txtPassword" Text="" VerticalAlignment="Top" Width="422" TextChanged="txtUsername_TextChanged" />
+            <TextBox Height="76" HorizontalAlignment="Left" Margin="10,110,0,0" Name="txtUsername" Text="" VerticalAlignment="Top" Width="422" TextChanged="txtUsername_TextChanged" Background="White" />
             <Button Content="Sign in " Height="72" HorizontalAlignment="Left" Margin="240,529,0,0" Name="btnLogin" VerticalAlignment="Top" Width="210" FontSize="24" Click="btnLogin_Click" IsEnabled="False" />
 
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,75,0,0" Name="lblUsername" Text="User Name" VerticalAlignment="Top" Foreground="White" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,0,0,384" Name="lblPassword" Text="Password" VerticalAlignment="Bottom" Foreground="White" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
-            <HyperlinkButton x:Name="btnSignUp" Content="I don't have a LiveTraffic account" Height="34" HorizontalAlignment="Left" Margin="20,425,0,0" VerticalAlignment="Top" Width="376" Click="btnSignUp_Click" />
+            <HyperlinkButton x:Name="btnSignUp" Content="I don't have a LiveTraffic account" Height="34" HorizontalAlignment="Left" Margin="20,425,0,0" VerticalAlignment="Top" Width="376" Click="btnSignUp_Click" FontSize="23" />
             <Button Content="Cancel" FontSize="24" Height="72" HorizontalAlignment="Left" Margin="12,529,0,0" Name="btnCancel" VerticalAlignment="Top" Width="210" Click="btnCancel_Click" />
+            <PasswordBox Height="76" HorizontalAlignment="Left" Margin="10,229,0,0" Name="txtPassword" VerticalAlignment="Top" Width="420" Background="White" PasswordChanged="txtPassword_PasswordChanged" />
+            <CheckBox Content="Show Password" Height="75" HorizontalAlignment="Left" Margin="20,311,0,0" Name="chkShowPassword" VerticalAlignment="Top" FontSize="23" Width="231" Unchecked="chkShowPassword_Unchecked" Checked="chkShowPassword_Checked" />
         </Grid>
         
     </Grid>
