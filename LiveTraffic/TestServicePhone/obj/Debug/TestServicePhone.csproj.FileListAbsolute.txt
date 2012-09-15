@@ -1,0 +1,4 @@
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\TestServicePhone\bin\TestServicePhone.dll
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\TestServicePhone\bin\TestServicePhone.pdb
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\TestServicePhone\obj\Debug\TestServicePhone.dll
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\TestServicePhone\obj\Debug\TestServicePhone.pdb
