@@ -75,7 +75,7 @@ namespace MobileLiveTraffic
 
             if (this.map.Children.Count != 0)
             {
-                var pushpin = map.Children.FirstOrDefault(p => (p.GetType() == typeof(Pushpin) && ((Pushpin)p).Tag == "locationPushpin"));
+                var pushpin = map.Children.FirstOrDefault(p => (p.GetType() == typeof(Pushpin) && ( (string) ((Pushpin)p).Tag) == "locationPushpin"));
 
                 if (pushpin != null)
                 {
