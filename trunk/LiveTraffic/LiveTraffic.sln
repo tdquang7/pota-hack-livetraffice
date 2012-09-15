@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileLiveTraffic", "MobileLiveTraffic\MobileLiveTraffic.csproj", "{5B121C13-028B-4053-82C5-F43594E8E4E7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{01D84405-15E5-456F-B31A-0395601BF2F7} = {01D84405-15E5-456F-B31A-0395601BF2F7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveTrafficServices", "LiveTrafficServices\LiveTrafficServices.csproj", "{01D84405-15E5-456F-B31A-0395601BF2F7}"
 EndProject

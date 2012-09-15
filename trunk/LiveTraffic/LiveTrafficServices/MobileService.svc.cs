@@ -18,6 +18,14 @@ namespace LiveTrafficServices
             return;
         }
 
+        [OperationContract]
+        public bool Login(string username, string password)
+        {
+            if (username.Equals("123"))
+                return true;
+            return false;
+        }
+
         // Add more operations here and mark them with [OperationContract]
     }
 }
