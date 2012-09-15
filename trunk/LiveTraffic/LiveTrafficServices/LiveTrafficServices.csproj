@@ -14,6 +14,7 @@
     <AssemblyName>LiveTrafficServices</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
+    <SilverlightApplicationList>{CC27884D-98A6-4CF7-B86B-689DEFB767C3}|..\SilverlightShowTrafficReport\SilverlightShowTrafficReport.csproj|ClientBin|False</SilverlightApplicationList>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,7 +54,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientBin\SilverlightShowTrafficReport.xap" />
     <Content Include="MobileService.svc" />
+    <Content Include="Silverlight.js" />
+    <Content Include="SilverlightShowTrafficReportTestPage.aspx" />
+    <Content Include="SilverlightShowTrafficReportTestPage.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
