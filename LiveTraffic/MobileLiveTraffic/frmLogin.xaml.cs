@@ -30,12 +30,12 @@ namespace MobileLiveTraffic
             //else
             //    ((App)App.Current).Username = null;
 
-            LiveTrafficeService.MobileServiceClient service = new LiveTrafficeService.MobileServiceClient();
+            LiveTrafficService.MobileServiceClient service = new LiveTrafficService.MobileServiceClient();
             service.LoginAsync(txtUsername.Text, txtPassword.Text);
-            service.LoginCompleted += new EventHandler<LiveTrafficeService.LoginCompletedEventArgs>(service_LoginCompleted);
+            service.LoginCompleted += new EventHandler<LiveTrafficService.LoginCompletedEventArgs>(service_LoginCompleted);
         }
 
-        void service_LoginCompleted(object sender, LiveTrafficeService.LoginCompletedEventArgs e)
+        void service_LoginCompleted(object sender, LiveTrafficService.LoginCompletedEventArgs e)
         {
             bool result = e.Result;
             if (result == true)
