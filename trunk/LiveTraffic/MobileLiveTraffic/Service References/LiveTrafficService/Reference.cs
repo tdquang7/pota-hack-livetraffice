@@ -18,15 +18,20 @@ namespace MobileLiveTraffic.LiveTrafficService {
     [System.ServiceModel.ServiceContractAttribute(Namespace="", ConfigurationName="LiveTrafficService.MobileService")]
     public interface MobileService {
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:MobileService/DoWork", ReplyAction="urn:MobileService/DoWorkResponse")]
-        System.IAsyncResult BeginDoWork(System.AsyncCallback callback, object asyncState);
-        
-        void EndDoWork(System.IAsyncResult result);
-        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:MobileService/Login", ReplyAction="urn:MobileService/LoginResponse")]
         System.IAsyncResult BeginLogin(string username, string password, System.AsyncCallback callback, object asyncState);
         
         bool EndLogin(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:MobileService/UpdateStreetStatus", ReplyAction="urn:MobileService/UpdateStreetStatusResponse")]
+        System.IAsyncResult BeginUpdateStreetStatus(string username, string country, string city, string street, double latitude, double longitude, string status, System.AsyncCallback callback, object asyncState);
+        
+        bool EndUpdateStreetStatus(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:MobileService/GetStreetStatus", ReplyAction="urn:MobileService/GetStreetStatusResponse")]
+        System.IAsyncResult BeginGetStreetStatus(string country, string city, string street, double latitude, double longitude, System.AsyncCallback callback, object asyncState);
+        
+        string EndGetStreetStatus(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -54,19 +59,63 @@ namespace MobileLiveTraffic.LiveTrafficService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class UpdateStreetStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public UpdateStreetStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetStreetStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetStreetStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class MobileServiceClient : System.ServiceModel.ClientBase<MobileLiveTraffic.LiveTrafficService.MobileService>, MobileLiveTraffic.LiveTrafficService.MobileService {
-        
-        private BeginOperationDelegate onBeginDoWorkDelegate;
-        
-        private EndOperationDelegate onEndDoWorkDelegate;
-        
-        private System.Threading.SendOrPostCallback onDoWorkCompletedDelegate;
         
         private BeginOperationDelegate onBeginLoginDelegate;
         
         private EndOperationDelegate onEndLoginDelegate;
         
         private System.Threading.SendOrPostCallback onLoginCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginUpdateStreetStatusDelegate;
+        
+        private EndOperationDelegate onEndUpdateStreetStatusDelegate;
+        
+        private System.Threading.SendOrPostCallback onUpdateStreetStatusCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetStreetStatusDelegate;
+        
+        private EndOperationDelegate onEndGetStreetStatusDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetStreetStatusCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -121,56 +170,15 @@ namespace MobileLiveTraffic.LiveTrafficService {
             }
         }
         
-        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DoWorkCompleted;
-        
         public event System.EventHandler<LoginCompletedEventArgs> LoginCompleted;
+        
+        public event System.EventHandler<UpdateStreetStatusCompletedEventArgs> UpdateStreetStatusCompleted;
+        
+        public event System.EventHandler<GetStreetStatusCompletedEventArgs> GetStreetStatusCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult MobileLiveTraffic.LiveTrafficService.MobileService.BeginDoWork(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginDoWork(callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void MobileLiveTraffic.LiveTrafficService.MobileService.EndDoWork(System.IAsyncResult result) {
-            base.Channel.EndDoWork(result);
-        }
-        
-        private System.IAsyncResult OnBeginDoWork(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((MobileLiveTraffic.LiveTrafficService.MobileService)(this)).BeginDoWork(callback, asyncState);
-        }
-        
-        private object[] OnEndDoWork(System.IAsyncResult result) {
-            ((MobileLiveTraffic.LiveTrafficService.MobileService)(this)).EndDoWork(result);
-            return null;
-        }
-        
-        private void OnDoWorkCompleted(object state) {
-            if ((this.DoWorkCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.DoWorkCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void DoWorkAsync() {
-            this.DoWorkAsync(null);
-        }
-        
-        public void DoWorkAsync(object userState) {
-            if ((this.onBeginDoWorkDelegate == null)) {
-                this.onBeginDoWorkDelegate = new BeginOperationDelegate(this.OnBeginDoWork);
-            }
-            if ((this.onEndDoWorkDelegate == null)) {
-                this.onEndDoWorkDelegate = new EndOperationDelegate(this.OnEndDoWork);
-            }
-            if ((this.onDoWorkCompletedDelegate == null)) {
-                this.onDoWorkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDoWorkCompleted);
-            }
-            base.InvokeAsync(this.onBeginDoWorkDelegate, null, this.onEndDoWorkDelegate, this.onDoWorkCompletedDelegate, userState);
-        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult MobileLiveTraffic.LiveTrafficService.MobileService.BeginLogin(string username, string password, System.AsyncCallback callback, object asyncState) {
@@ -218,6 +226,118 @@ namespace MobileLiveTraffic.LiveTrafficService {
             base.InvokeAsync(this.onBeginLoginDelegate, new object[] {
                         username,
                         password}, this.onEndLoginDelegate, this.onLoginCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult MobileLiveTraffic.LiveTrafficService.MobileService.BeginUpdateStreetStatus(string username, string country, string city, string street, double latitude, double longitude, string status, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUpdateStreetStatus(username, country, city, street, latitude, longitude, status, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool MobileLiveTraffic.LiveTrafficService.MobileService.EndUpdateStreetStatus(System.IAsyncResult result) {
+            return base.Channel.EndUpdateStreetStatus(result);
+        }
+        
+        private System.IAsyncResult OnBeginUpdateStreetStatus(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string username = ((string)(inValues[0]));
+            string country = ((string)(inValues[1]));
+            string city = ((string)(inValues[2]));
+            string street = ((string)(inValues[3]));
+            double latitude = ((double)(inValues[4]));
+            double longitude = ((double)(inValues[5]));
+            string status = ((string)(inValues[6]));
+            return ((MobileLiveTraffic.LiveTrafficService.MobileService)(this)).BeginUpdateStreetStatus(username, country, city, street, latitude, longitude, status, callback, asyncState);
+        }
+        
+        private object[] OnEndUpdateStreetStatus(System.IAsyncResult result) {
+            bool retVal = ((MobileLiveTraffic.LiveTrafficService.MobileService)(this)).EndUpdateStreetStatus(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnUpdateStreetStatusCompleted(object state) {
+            if ((this.UpdateStreetStatusCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.UpdateStreetStatusCompleted(this, new UpdateStreetStatusCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void UpdateStreetStatusAsync(string username, string country, string city, string street, double latitude, double longitude, string status) {
+            this.UpdateStreetStatusAsync(username, country, city, street, latitude, longitude, status, null);
+        }
+        
+        public void UpdateStreetStatusAsync(string username, string country, string city, string street, double latitude, double longitude, string status, object userState) {
+            if ((this.onBeginUpdateStreetStatusDelegate == null)) {
+                this.onBeginUpdateStreetStatusDelegate = new BeginOperationDelegate(this.OnBeginUpdateStreetStatus);
+            }
+            if ((this.onEndUpdateStreetStatusDelegate == null)) {
+                this.onEndUpdateStreetStatusDelegate = new EndOperationDelegate(this.OnEndUpdateStreetStatus);
+            }
+            if ((this.onUpdateStreetStatusCompletedDelegate == null)) {
+                this.onUpdateStreetStatusCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateStreetStatusCompleted);
+            }
+            base.InvokeAsync(this.onBeginUpdateStreetStatusDelegate, new object[] {
+                        username,
+                        country,
+                        city,
+                        street,
+                        latitude,
+                        longitude,
+                        status}, this.onEndUpdateStreetStatusDelegate, this.onUpdateStreetStatusCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult MobileLiveTraffic.LiveTrafficService.MobileService.BeginGetStreetStatus(string country, string city, string street, double latitude, double longitude, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetStreetStatus(country, city, street, latitude, longitude, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        string MobileLiveTraffic.LiveTrafficService.MobileService.EndGetStreetStatus(System.IAsyncResult result) {
+            return base.Channel.EndGetStreetStatus(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetStreetStatus(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string country = ((string)(inValues[0]));
+            string city = ((string)(inValues[1]));
+            string street = ((string)(inValues[2]));
+            double latitude = ((double)(inValues[3]));
+            double longitude = ((double)(inValues[4]));
+            return ((MobileLiveTraffic.LiveTrafficService.MobileService)(this)).BeginGetStreetStatus(country, city, street, latitude, longitude, callback, asyncState);
+        }
+        
+        private object[] OnEndGetStreetStatus(System.IAsyncResult result) {
+            string retVal = ((MobileLiveTraffic.LiveTrafficService.MobileService)(this)).EndGetStreetStatus(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetStreetStatusCompleted(object state) {
+            if ((this.GetStreetStatusCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetStreetStatusCompleted(this, new GetStreetStatusCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetStreetStatusAsync(string country, string city, string street, double latitude, double longitude) {
+            this.GetStreetStatusAsync(country, city, street, latitude, longitude, null);
+        }
+        
+        public void GetStreetStatusAsync(string country, string city, string street, double latitude, double longitude, object userState) {
+            if ((this.onBeginGetStreetStatusDelegate == null)) {
+                this.onBeginGetStreetStatusDelegate = new BeginOperationDelegate(this.OnBeginGetStreetStatus);
+            }
+            if ((this.onEndGetStreetStatusDelegate == null)) {
+                this.onEndGetStreetStatusDelegate = new EndOperationDelegate(this.OnEndGetStreetStatus);
+            }
+            if ((this.onGetStreetStatusCompletedDelegate == null)) {
+                this.onGetStreetStatusCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetStreetStatusCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetStreetStatusDelegate, new object[] {
+                        country,
+                        city,
+                        street,
+                        latitude,
+                        longitude}, this.onEndGetStreetStatusDelegate, this.onGetStreetStatusCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -296,17 +416,6 @@ namespace MobileLiveTraffic.LiveTrafficService {
                     base(client) {
             }
             
-            public System.IAsyncResult BeginDoWork(System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[0];
-                System.IAsyncResult _result = base.BeginInvoke("DoWork", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public void EndDoWork(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                base.EndInvoke("DoWork", _args, result);
-            }
-            
             public System.IAsyncResult BeginLogin(string username, string password, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[2];
                 _args[0] = username;
@@ -318,6 +427,42 @@ namespace MobileLiveTraffic.LiveTrafficService {
             public bool EndLogin(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 bool _result = ((bool)(base.EndInvoke("Login", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginUpdateStreetStatus(string username, string country, string city, string street, double latitude, double longitude, string status, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[7];
+                _args[0] = username;
+                _args[1] = country;
+                _args[2] = city;
+                _args[3] = street;
+                _args[4] = latitude;
+                _args[5] = longitude;
+                _args[6] = status;
+                System.IAsyncResult _result = base.BeginInvoke("UpdateStreetStatus", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndUpdateStreetStatus(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("UpdateStreetStatus", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetStreetStatus(string country, string city, string street, double latitude, double longitude, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[5];
+                _args[0] = country;
+                _args[1] = city;
+                _args[2] = street;
+                _args[3] = latitude;
+                _args[4] = longitude;
+                System.IAsyncResult _result = base.BeginInvoke("GetStreetStatus", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public string EndGetStreetStatus(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                string _result = ((string)(base.EndInvoke("GetStreetStatus", _args, result)));
                 return _result;
             }
         }

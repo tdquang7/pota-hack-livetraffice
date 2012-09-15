@@ -44,6 +44,9 @@ namespace MobileLiveTraffic
                 GeocodeService1.UserLocation point = new GeocodeService1.UserLocation();
                 point.Latitude = watcher.Position.Location.Latitude;
                 point.Longitude = watcher.Position.Location.Longitude;
+                latitude = point.Latitude;
+                longitude = point.Longitude;
+
                 watcher.Stop();
                 reverseGeocodeRequest.Location = point;
 
@@ -73,14 +76,37 @@ namespace MobileLiveTraffic
             lbStreet.Content = street;
         }
 
+        private double latitude;
+        private double longitude;
         private void btnSlow_Click(object sender, RoutedEventArgs e)
         {
+            string status = "slow";
 
+            LiveTrafficService.MobileServiceClient service = new LiveTrafficService.MobileServiceClient();
+            service.UpdateStreetStatusAsync(((App)App.Current).Username, lbCountry.Content.ToString(), lbCity.Content.ToString(), lbStreet.Content.ToString(), latitude, longitude, status);
+            service.UpdateStreetStatusCompleted += new EventHandler<LiveTrafficService.UpdateStreetStatusCompletedEventArgs>(service_UpdateStreetStatusCompleted);
+        }
+
+        void service_UpdateStreetStatusCompleted(object sender, LiveTrafficService.UpdateStreetStatusCompletedEventArgs e)
+        {
+            if (e.Result)
+            {
+                MessageBox.Show("Updating street status successfully");
+                NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                MessageBox.Show("Updating street status fail.");
+            }
         }
 
         private void btnTrafficJam_Click(object sender, RoutedEventArgs e)
         {
+            string status = "busy";
 
+            LiveTrafficService.MobileServiceClient service = new LiveTrafficService.MobileServiceClient();
+            service.UpdateStreetStatusAsync(((App)App.Current).Username, lbCountry.Content.ToString(), lbCity.Content.ToString(), lbStreet.Content.ToString(), latitude, longitude, status);
+            service.UpdateStreetStatusCompleted += new EventHandler<LiveTrafficService.UpdateStreetStatusCompletedEventArgs>(service_UpdateStreetStatusCompleted);
         }
 
         
