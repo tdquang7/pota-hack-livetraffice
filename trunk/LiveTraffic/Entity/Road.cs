@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Entity
 {
-    class Road
+    public class Road
     {
-    }
+
+    } 
 }
