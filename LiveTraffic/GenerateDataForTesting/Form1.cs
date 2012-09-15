@@ -52,22 +52,25 @@ namespace GenerateDataForTesting
                 double latitude = gpsLocations[i * 2];
                 double longitude = gpsLocations[i * 2 + 1];
 
-                sql = "insert into TrafficReport(Reporter, ReportTime, Latitude, Longtitude, Status, SegmentID, Country, City, District, Street) " +
-                    "values(@Reporter, @ReportTime, @Latitude, @Longtitude, @Status, @SegmentID, @Country, @City, @District, @Street)";
+                //sql = "insert into TrafficReport(Reporter, ReportTime, Latitude, Longtitude, Status, SegmentID, Country, City, District, Street) " +
+                //    "values(@Reporter, @ReportTime, @Latitude, @Longtitude, @Status, @SegmentID, @Country, @City, @District, @Street)";
 
-                cmd = new SqlCommand(sql, connection);
-                cmd.Parameters.Add(new SqlParameter("@Reporter", SqlDbType.NVarChar)).Value = username;
-                cmd.Parameters.Add(new SqlParameter("@ReportTime", SqlDbType.DateTime)).Value = DateTime.Now;
-                cmd.Parameters.Add(new SqlParameter("@Latitude", SqlDbType.Float)).Value = latitude;
-                cmd.Parameters.Add(new SqlParameter("@Longtitude", SqlDbType.Float)).Value = longitude;
-                cmd.Parameters.Add(new SqlParameter("@Status", SqlDbType.NVarChar)).Value = status;
-                cmd.Parameters.Add(new SqlParameter("@SegmentID", SqlDbType.NVarChar)).Value = ""; // Temporary not used
-                cmd.Parameters.Add(new SqlParameter("@Country", SqlDbType.NVarChar)).Value = country;
-                cmd.Parameters.Add(new SqlParameter("@City", SqlDbType.NVarChar)).Value = city;
-                cmd.Parameters.Add(new SqlParameter("@District", SqlDbType.NVarChar)).Value = district;
-                cmd.Parameters.Add(new SqlParameter("@Street", SqlDbType.NVarChar)).Value = street;
+                //cmd = new SqlCommand(sql, connection);
+                //cmd.Parameters.Add(new SqlParameter("@Reporter", SqlDbType.NVarChar)).Value = username;
+                //cmd.Parameters.Add(new SqlParameter("@ReportTime", SqlDbType.DateTime)).Value = DateTime.Now;
+                //cmd.Parameters.Add(new SqlParameter("@Latitude", SqlDbType.Float)).Value = latitude;
+                //cmd.Parameters.Add(new SqlParameter("@Longtitude", SqlDbType.Float)).Value = longitude;
+                //cmd.Parameters.Add(new SqlParameter("@Status", SqlDbType.NVarChar)).Value = status;
+                //cmd.Parameters.Add(new SqlParameter("@SegmentID", SqlDbType.NVarChar)).Value = ""; // Temporary not used
+                //cmd.Parameters.Add(new SqlParameter("@Country", SqlDbType.NVarChar)).Value = country;
+                //cmd.Parameters.Add(new SqlParameter("@City", SqlDbType.NVarChar)).Value = city;
+                //cmd.Parameters.Add(new SqlParameter("@District", SqlDbType.NVarChar)).Value = district;
+                //cmd.Parameters.Add(new SqlParameter("@Street", SqlDbType.NVarChar)).Value = street;
 
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
+
+                TrafficReport report = new TrafficReport();
+                report.UpdateStreetStatus(username, country, city, district, street, latitude, longitude, "busy");
             }
 
             connection.Close();
