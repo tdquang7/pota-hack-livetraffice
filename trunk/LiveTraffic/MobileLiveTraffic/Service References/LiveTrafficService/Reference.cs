@@ -29,7 +29,7 @@ namespace MobileLiveTraffic.LiveTrafficService {
         bool EndUpdateStreetStatus(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:MobileService/GetStreetStatus", ReplyAction="urn:MobileService/GetStreetStatusResponse")]
-        System.IAsyncResult BeginGetStreetStatus(string country, string city, string district, string street, double latitude, double longitude, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetStreetStatus(string country, string city, string district, string street, double latitude, double longitude, string mode, System.AsyncCallback callback, object asyncState);
         
         string EndGetStreetStatus(System.IAsyncResult result);
     }
@@ -289,8 +289,8 @@ namespace MobileLiveTraffic.LiveTrafficService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult MobileLiveTraffic.LiveTrafficService.MobileService.BeginGetStreetStatus(string country, string city, string district, string street, double latitude, double longitude, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetStreetStatus(country, city, district, street, latitude, longitude, callback, asyncState);
+        System.IAsyncResult MobileLiveTraffic.LiveTrafficService.MobileService.BeginGetStreetStatus(string country, string city, string district, string street, double latitude, double longitude, string mode, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetStreetStatus(country, city, district, street, latitude, longitude, mode, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -305,7 +305,8 @@ namespace MobileLiveTraffic.LiveTrafficService {
             string street = ((string)(inValues[3]));
             double latitude = ((double)(inValues[4]));
             double longitude = ((double)(inValues[5]));
-            return ((MobileLiveTraffic.LiveTrafficService.MobileService)(this)).BeginGetStreetStatus(country, city, district, street, latitude, longitude, callback, asyncState);
+            string mode = ((string)(inValues[6]));
+            return ((MobileLiveTraffic.LiveTrafficService.MobileService)(this)).BeginGetStreetStatus(country, city, district, street, latitude, longitude, mode, callback, asyncState);
         }
         
         private object[] OnEndGetStreetStatus(System.IAsyncResult result) {
@@ -321,11 +322,11 @@ namespace MobileLiveTraffic.LiveTrafficService {
             }
         }
         
-        public void GetStreetStatusAsync(string country, string city, string district, string street, double latitude, double longitude) {
-            this.GetStreetStatusAsync(country, city, district, street, latitude, longitude, null);
+        public void GetStreetStatusAsync(string country, string city, string district, string street, double latitude, double longitude, string mode) {
+            this.GetStreetStatusAsync(country, city, district, street, latitude, longitude, mode, null);
         }
         
-        public void GetStreetStatusAsync(string country, string city, string district, string street, double latitude, double longitude, object userState) {
+        public void GetStreetStatusAsync(string country, string city, string district, string street, double latitude, double longitude, string mode, object userState) {
             if ((this.onBeginGetStreetStatusDelegate == null)) {
                 this.onBeginGetStreetStatusDelegate = new BeginOperationDelegate(this.OnBeginGetStreetStatus);
             }
@@ -341,7 +342,8 @@ namespace MobileLiveTraffic.LiveTrafficService {
                         district,
                         street,
                         latitude,
-                        longitude}, this.onEndGetStreetStatusDelegate, this.onGetStreetStatusCompletedDelegate, userState);
+                        longitude,
+                        mode}, this.onEndGetStreetStatusDelegate, this.onGetStreetStatusCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -454,14 +456,15 @@ namespace MobileLiveTraffic.LiveTrafficService {
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetStreetStatus(string country, string city, string district, string street, double latitude, double longitude, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[6];
+            public System.IAsyncResult BeginGetStreetStatus(string country, string city, string district, string street, double latitude, double longitude, string mode, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[7];
                 _args[0] = country;
                 _args[1] = city;
                 _args[2] = district;
                 _args[3] = street;
                 _args[4] = latitude;
                 _args[5] = longitude;
+                _args[6] = mode;
                 System.IAsyncResult _result = base.BeginInvoke("GetStreetStatus", _args, callback, asyncState);
                 return _result;
             }

@@ -25,8 +25,19 @@ namespace LiveTrafficServices
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="country"></param>
+        /// <param name="city"></param>
+        /// <param name="district"></param>
+        /// <param name="street"></param>
+        /// <param name="latitude"></param>
+        /// <param name="longitude"></param>
+        /// <param name="mode">same: tren cung duong, near: cac diem xung quanh</param>
+        /// <returns></returns>
         [OperationContract]
-        public string GetStreetStatus(string country, string city,string district, string street, double latitude, double longitude)
+        public string GetStreetStatus(string country, string city,string district, string street, double latitude, double longitude, string mode)
         {
             return "busy";
         }

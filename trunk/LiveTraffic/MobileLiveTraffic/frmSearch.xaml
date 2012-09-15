@@ -22,12 +22,23 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="Live Traffic" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Search" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"></Grid>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="10,10,0,0" Name="textBlock1" Text="Country" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="10,110,0,0" Name="textBlock2" Text="City" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="10,306,0,0" Name="textBlock3" Text="Street" VerticalAlignment="Top" />
+            <ListBox Background="White" Height="45" HorizontalAlignment="Left" Margin="10,46,0,0" Name="lbCountry" VerticalAlignment="Top" Width="411" />
+            <ListBox Background="White" Height="45" HorizontalAlignment="Left" Margin="10,146,0,0" Name="lbCity" VerticalAlignment="Top" Width="411" />
+            <ListBox Background="White" Height="45" HorizontalAlignment="Left" Margin="10,342,0,0" Name="lbStreet" VerticalAlignment="Top" Width="411" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="10,208,0,0" Name="textBlock4" Text="District" VerticalAlignment="Top" />
+            <ListBox Background="White" Height="45" HorizontalAlignment="Left" Margin="10,244,0,0" Name="lbDistrict" VerticalAlignment="Top" Width="411" />
+            <Button Content="Near places" FontSize="20" Height="81" HorizontalAlignment="Left" Margin="238,414,0,0" Name="btnSame" VerticalAlignment="Top" Width="183" Click="btnSame_Click" />
+            <Button Content="Same street" FontSize="20" Height="81" HorizontalAlignment="Left" Margin="10,414,0,0" Name="btnNear" VerticalAlignment="Top" Width="189" Click="btnNear_Click" />
+        </Grid>
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->

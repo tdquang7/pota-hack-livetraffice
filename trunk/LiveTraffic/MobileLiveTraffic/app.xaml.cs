@@ -33,6 +33,14 @@ namespace MobileLiveTraffic
             set { _username = value; }
         }
 
+        private string _searchMode;
+
+        public string SearchMode
+        {
+            get { return _searchMode; }
+            set { _searchMode = value; }
+        }
+
         private readonly CredentialsProvider _credentialsProvider = new ApplicationIdCredentialsProvider(App.Id);
         public CredentialsProvider CredentialsProvider
         {

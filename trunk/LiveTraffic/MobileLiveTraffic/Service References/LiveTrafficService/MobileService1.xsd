@@ -45,6 +45,7 @@
         <xs:element minOccurs="0" name="street" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="latitude" type="xs:double" />
         <xs:element minOccurs="0" name="longitude" type="xs:double" />
+        <xs:element minOccurs="0" name="mode" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

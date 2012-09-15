@@ -22,16 +22,8 @@ namespace MobileLiveTraffic
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            //if (txtUsername.Text=="123")
-            //{
-            //    ((App)App.Current).Username = txtUsername.Text;
-            //    NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
-            //}
-            //else
-            //    ((App)App.Current).Username = null;
-
             LiveTrafficService.MobileServiceClient service = new LiveTrafficService.MobileServiceClient();
-            service.LoginAsync(txtUsername.Text, txtPassword.Text);
+            service.LoginAsync(txtUsername.Text, txtPassword.Password);
             service.LoginCompleted += new EventHandler<LiveTrafficService.LoginCompletedEventArgs>(service_LoginCompleted);
         }
 
@@ -60,12 +52,28 @@ namespace MobileLiveTraffic
 
         private void txtUsername_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (txtUsername.Text != "" && txtPassword.Text != "")
+            if (txtUsername.Text != "" && txtPassword.Password != "")
                 btnLogin.IsEnabled = true;
             else
                 btnLogin.IsEnabled = false;
         }
 
-        
+        private void chkShowPassword_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void chkShowPassword_Checked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void txtPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (txtUsername.Text != "" && txtPassword.Password != "")
+                btnLogin.IsEnabled = true;
+            else
+                btnLogin.IsEnabled = false;
+        }
+
     }
 }
