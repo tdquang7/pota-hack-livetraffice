@@ -52,6 +52,31 @@ namespace MobileLiveTraffic
 
         }
 
+        private void ApplicationBarMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/frmSearch.xaml", UriKind.Relative));
+        }
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/frmUpdate.xaml", UriKind.Relative));
+        }
+
+        private void About_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/frmAbout.xaml", UriKind.Relative));
+        }
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/frmLogin.xaml", UriKind.Relative));
+        }
+
         
     }
 }

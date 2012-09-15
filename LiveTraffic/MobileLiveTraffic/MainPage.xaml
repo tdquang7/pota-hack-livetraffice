@@ -142,10 +142,10 @@
             <shell:ApplicationBarIconButton Text="Mode" IconUri="/Resources/Icons/ApplicationBar/Mode.png" />
 
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="Search" />
-                <shell:ApplicationBarMenuItem Text="Update" />
-                <shell:ApplicationBarMenuItem Text="About" />
-                <shell:ApplicationBarMenuItem Text="Login" />
+                <shell:ApplicationBarMenuItem Text="Search" Click="Search_Click"/>
+                <shell:ApplicationBarMenuItem Text="Update" Click="Update_Click"/>
+                <shell:ApplicationBarMenuItem Text="About" Click="About_Click"/>
+                <shell:ApplicationBarMenuItem Text="Login" Click="Login_Click"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
