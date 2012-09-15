@@ -12,71 +12,102 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Controls.Maps;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Controls.Maps.Core;
+using System.Device.Location;
 
 namespace MobileLiveTraffic
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        
-
         // Constructor
         public MainPage()
         {
             InitializeComponent();
 
-           // LoadApplicationBarImages();
+            _lastMode = new AerialMode();
+            _gpsWatcher = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
+            _gpsWatcher.MovementThreshold = 20;
+            _gpsWatcher.PositionChanged += new EventHandler<GeoPositionChangedEventArgs<GeoCoordinate>>(_gpsWatcher_PositionChanged);
+            _gpsWatcher.StatusChanged += new EventHandler<GeoPositionStatusChangedEventArgs>(_gpsWatcher_StatusChanged);
+            _gpsWatcher.Start();
         }
 
-        private double _zoom;
+        private MapMode _lastMode;
+        private GeoCoordinateWatcher _gpsWatcher;
 
-        public double Zoom
-        {
-            get { return _zoom; }
-            set
-            {
-                //var coercedZoom = Math.Max(MinZoomLevel, Math.Min(MaxZoomLevel, value));
-                //if (_zoom != coercedZoom)
-                //{
-                //    _zoom = value;
-                //}
-            }
-        }
-
-        private void btnZoomIn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnZoomOut_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ApplicationBarMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Search_Click(object sender, EventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/frmSearch.xaml", UriKind.Relative));
-        }
-
-        private void Update_Click(object sender, EventArgs e)
+        private void btnUpdateTraffic_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/frmUpdate.xaml", UriKind.Relative));
         }
 
-        private void About_Click(object sender, EventArgs e)
+        private void btnAbout_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/frmAbout.xaml", UriKind.Relative));
         }
 
-        private void Login_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/frmLogin.xaml", UriKind.Relative));
         }
 
+        private void btnUpdateUser_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/frmUpdateUserInfo.xaml", UriKind.Relative));
+        }
+
+        void _gpsWatcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
+        {
+            switch (e.Status)
+            {
+                case GeoPositionStatus.Disabled:
+                    MessageBox.Show("Location Service is not enabled on the device");
+                    break;
+
+                case GeoPositionStatus.NoData:
+                    MessageBox.Show(" The Location Service is working, but it cannot get location data.");
+                    break;
+            }
+        }
+
+        void _gpsWatcher_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
+        {
+            map.Center = new GeoCoordinate(e.Position.Location.Latitude, e.Position.Location.Longitude);
+
+            if (this.map.Children.Count != 0)
+            {
+                var pushpin = map.Children.FirstOrDefault(p => (p.GetType() == typeof(Pushpin) && ((Pushpin)p).Tag == "locationPushpin"));
+
+                if (pushpin != null)
+                {
+                    this.map.Children.Remove(pushpin);
+                }
+            }
+
+            Pushpin locationPushpin = new Pushpin();
+            locationPushpin.Tag = "locationPushpin";
+            locationPushpin.Location = _gpsWatcher.Position.Location;
+            this.map.Children.Add(locationPushpin);
+            this.map.SetView(_gpsWatcher.Position.Location, 15.0);
+        }
+
+        private void btnMode_Click(object sender, EventArgs e)
+        {
+            MapMode temp = _lastMode;
+            _lastMode=map.Mode;
+            map.Mode= temp;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/frmSearch.xaml", UriKind.Relative));
+        }
+
+        private void btnYourLocation_Click(object sender, EventArgs e)
+        {
+            _gpsWatcher.Start();
+        }
+
         
+
     }
 }

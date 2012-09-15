@@ -22,20 +22,15 @@
                 Background="Black"
 			    Height="768" Width="480">
 
-            <my:Map Name="Map"
+            <my:Map Name="map"
                     CredentialsProvider="{Binding CredentialsProvider}"                    
                     ZoomLevel="{Binding Zoom, Mode=TwoWay}"
                     Center="{Binding Center, Mode=TwoWay}">
                 
-                <Button x:Name="btnZoomIn" 
-                    HorizontalAlignment="Left" VerticalAlignment="Top" 
-                    Height="56" Width="56" Margin="8,180,0,0" Click="btnZoomIn_Click"
-                    Style="{StaticResource ButtonZoomInStyle}"/>
-
-                <Button x:Name="btnZoomOut"
-                    HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Height="56" Width="56" Margin="8,260,0,0" Click="btnZoomOut_Click" 
-                    Style="{StaticResource ButtonZoomOutStyle}"/>
+                <!--<Button x:Name="btnYourLocation" 
+                    HorizontalAlignment="Left" VerticalAlignment="Stretch" 
+                    Height="48" Width="48" Margin="8,180,0,0"
+                    Style="{StaticResource ButtonZoomInStyle}" Click="btnYourLocation_Click" VerticalContentAlignment="Top" />-->
 
             </my:Map>
             
@@ -61,72 +56,7 @@
             <Border.RenderTransform>
                 <CompositeTransform TranslateY="340"/>
             </Border.RenderTransform>
-
-            <!-- TODO : Add control for displaying directions -->
-
         </Border>
-
-        <!-- Visual States -->
-        <!--<VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="RouteStates">
-                <VisualStateGroup.Transitions>
-                    <VisualTransition To="ShowRoute" />
-                    <VisualTransition To="HideRoute" />
-                </VisualStateGroup.Transitions>
-                <VisualState x:Name="ShowRoute">
-                    <Storyboard>
-                        <DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="RouteView" d:IsOptimized="True">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseIn" />
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                    </Storyboard>
-                </VisualState>
-                <VisualState x:Name="HideRoute">
-                    <Storyboard>
-                        <DoubleAnimation Duration="0:0:0.3" To="-160" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="RouteView" d:IsOptimized="True">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseOut" />
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                    </Storyboard>
-                </VisualState>
-            </VisualStateGroup>
-            <VisualStateGroup x:Name="DirectionsStates">
-                <VisualStateGroup.Transitions>
-                    <VisualTransition To="ShowDirections" />
-                    <VisualTransition To="HideDirections" />
-                </VisualStateGroup.Transitions>
-                <VisualState x:Name="ShowDirections">
-                    <Storyboard>
-                        <DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="DirectionsView" d:IsOptimized="True">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseIn" />
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Duration="0:0:0.3" To="428" Storyboard.TargetProperty="Height" Storyboard.TargetName="MapView" d:IsOptimized="True">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseIn" />
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                    </Storyboard>
-                </VisualState>
-                <VisualState x:Name="HideDirections">
-                    <Storyboard>
-                        <DoubleAnimation Duration="0:0:0.3" To="340" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="DirectionsView" d:IsOptimized="True">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseOut" />
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Duration="0:0:0.3" To="768" Storyboard.TargetProperty="Height" Storyboard.TargetName="MapView" d:IsOptimized="True">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseOut" />
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                    </Storyboard>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>-->
     </Canvas>
 
     <!-- Application Bar -->
@@ -135,17 +65,15 @@
 							  IsVisible="True"
 							  IsMenuEnabled="True"
 							  Opacity="0.7">
-
-            <shell:ApplicationBarIconButton Text="Origin" IconUri="/Resources/Icons/ApplicationBar/Location.png" />
-            <shell:ApplicationBarIconButton Text="Route" IconUri="/Resources/Icons/ApplicationBar/Route.png"   />
-            <shell:ApplicationBarIconButton Text="Directions" IconUri="/Resources/Icons/ApplicationBar/Directions.png" />
-            <shell:ApplicationBarIconButton Text="Mode" IconUri="/Resources/Icons/ApplicationBar/Mode.png" />
+            <shell:ApplicationBarIconButton x:Name="btnYourLocation" Text="Find me" IconUri="/Resources/Icons/ApplicationBar/home1.png" Click="btnYourLocation_Click" />
+            <shell:ApplicationBarIconButton x:Name="btnSearch" Text="Search" IconUri="/Resources/Icons/ApplicationBar/search.png" Click="btnSearch_Click" />
+            <shell:ApplicationBarIconButton x:Name="btnMode" Text="Mode" IconUri="/Resources/Icons/ApplicationBar/Mode.png" Click="btnMode_Click" />
 
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="Search" Click="Search_Click"/>
-                <shell:ApplicationBarMenuItem Text="Update" Click="Update_Click"/>
-                <shell:ApplicationBarMenuItem Text="About" Click="About_Click"/>
-                <shell:ApplicationBarMenuItem Text="Login" Click="Login_Click"/>
+                <shell:ApplicationBarMenuItem x:Name="btnUpdateTraffic" Text="Update Traffic Status" Click="btnUpdateTraffic_Click" />
+                <shell:ApplicationBarMenuItem x:Name="btnAbout" Text="About" Click="btnAbout_Click" />
+                <shell:ApplicationBarMenuItem x:Name="btnUpdateUser" Text="Update user information" Click="btnUpdateUser_Click"  />
+                <shell:ApplicationBarMenuItem x:Name="btnLogin" Text="Login" Click="btnLogin_Click" />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
