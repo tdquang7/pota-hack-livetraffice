@@ -25,6 +25,14 @@ namespace MobileLiveTraffic
         public PhoneApplicationFrame RootFrame { get; private set; }
 
         internal const string Id = "Aql9UN6wo8WWxtUe79TsCxDzWwAir_kVpEBGA0wzvnbNgP_WK2mFpQPCoNgpxHYQ";
+        private static string _username;
+
+        public static string Username
+        {
+            get { return _username; }
+            set { _username = value; }
+        }
+
         private readonly CredentialsProvider _credentialsProvider = new ApplicationIdCredentialsProvider(App.Id);
         public CredentialsProvider CredentialsProvider
         {
