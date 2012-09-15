@@ -68,8 +68,8 @@
                         <Border x:Name="ButtonBackground">
                             <ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <Grid Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Image x:Name="image" Source="/UsingBingMaps;component/Resources/Icons/Zoom/ZoomIn_Black.png" Stretch="Fill" Visibility="Collapsed"/>
-                                    <Image x:Name="image1" Source="/UsingBingMaps;component/Resources/Icons/Zoom/ZoomIn_White.png" Stretch="Fill"/>
+                                    <Image x:Name="image" Source="/MobileLiveTraffic;component/Resources/Icons/Zoom/ZoomIn_Black.png" Stretch="Fill" Visibility="Collapsed"/>
+                                    <Image x:Name="image1" Source="/MobileLiveTraffic;component/Resources/Icons/Zoom/ZoomIn_White.png" Stretch="Fill"/>
                                 </Grid>
                             </ContentControl>
                         </Border>
@@ -133,8 +133,8 @@
                         <Border x:Name="ButtonBackground">
                             <ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <Grid Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Image x:Name="image1" Source="/UsingBingMaps;component/Resources/Icons/Zoom/ZoomOut_White.png" Stretch="Fill"/>
-                                    <Image x:Name="image" Source="/UsingBingMaps;component/Resources/Icons/Zoom/ZoomOut_Black.png" Stretch="Fill" Visibility="Collapsed"/>
+                                    <Image x:Name="image1" Source="/MobileLiveTraffic;component/Resources/Icons/Zoom/ZoomOut_White.png" Stretch="Fill"/>
+                                    <Image x:Name="image" Source="/MobileLiveTraffic;component/Resources/Icons/Zoom/ZoomOut_Black.png" Stretch="Fill" Visibility="Collapsed"/>
                                 </Grid>
                             </ContentControl>
                         </Border>
@@ -208,8 +208,8 @@
                         <Border x:Name="ButtonBackground" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="0" Margin="{StaticResource PhoneTouchTargetOverhang}" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" VerticalAlignment="Center" HorizontalAlignment="Center">
                                 <Grid>
-                                    <Image x:Name="image" HorizontalAlignment="Right" Height="48" Source="/UsingBingMaps;component/Resources/Icons/Route/SearchBlack.png" VerticalAlignment="Bottom" Width="48" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
-                                    <Image x:Name="image1" HorizontalAlignment="Right" Height="48" Source="/UsingBingMaps;component/Resources/Icons/Route/SearchWhite.png" Stretch="Fill" VerticalAlignment="Bottom" Width="48"/>
+                                    <Image x:Name="image" HorizontalAlignment="Right" Height="48" Source="/MobileLiveTraffic;component/Resources/Icons/Route/SearchBlack.png" VerticalAlignment="Bottom" Width="48" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+                                    <Image x:Name="image1" HorizontalAlignment="Right" Height="48" Source="/MobileLiveTraffic;component/Resources/Icons/Route/SearchWhite.png" Stretch="Fill" VerticalAlignment="Bottom" Width="48"/>
                                 </Grid>
                             </ContentControl>
                         </Border>
