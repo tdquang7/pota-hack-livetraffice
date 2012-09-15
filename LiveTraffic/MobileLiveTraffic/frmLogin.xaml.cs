@@ -29,7 +29,16 @@ namespace MobileLiveTraffic
 
         void service_LoginCompleted(object sender, LiveTrafficeService.LoginCompletedEventArgs e)
         {
-            
+            bool result = e.Result;
+            if (result == true)
+            {
+                App.Username = txtUsername.Text;
+                NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative)); 
+            }
+            else
+                App.Username = null;
+
+               
         }
 
         
