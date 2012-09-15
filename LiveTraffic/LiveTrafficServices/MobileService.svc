@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="LiveTrafficServices.MobileService" CodeBehind="MobileService.svc.cs" %>
