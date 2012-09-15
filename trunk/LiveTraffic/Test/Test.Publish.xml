@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="http://localhost/Test" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="TestApp" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="True" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="09/15/2012 17:30:23" />
+    <file relUrl="Site.Master" publishTime="09/15/2012 17:25:54" />
+    <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="09/15/2012 17:25:53" />
+    <file relUrl="Account/Register.aspx" publishTime="09/15/2012 17:25:53" />
+    <file relUrl="Account/Web.config" publishTime="09/15/2012 17:30:23" />
+    <file relUrl="Account/Login.aspx" publishTime="09/15/2012 17:25:53" />
+    <file relUrl="Styles/Site.css" publishTime="09/15/2012 17:25:54" />
+    <file relUrl="Scripts/jquery-1.4.1.js" publishTime="09/15/2012 17:25:53" />
+    <file relUrl="Account/ChangePassword.aspx" publishTime="09/15/2012 17:25:53" />
+    <file relUrl="bin/Test.dll" publishTime="09/15/2012 17:26:46" />
+    <file relUrl="Global.asax" publishTime="09/15/2012 17:25:54" />
+    <file relUrl="bin/Test.pdb" publishTime="09/15/2012 17:26:46" />
+    <file relUrl="About.aspx" publishTime="09/15/2012 17:25:54" />
+    <file relUrl="Account/ChangePasswordSuccess.aspx" publishTime="09/15/2012 17:25:53" />
+    <file relUrl="Default.aspx" publishTime="09/15/2012 17:25:54" />
+    <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="09/15/2012 17:25:54" />
+  </publishProfile>
+</publishData>
