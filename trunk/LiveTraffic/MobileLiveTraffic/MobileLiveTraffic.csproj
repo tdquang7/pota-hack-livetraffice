@@ -74,6 +74,9 @@
     <Compile Include="frmUpdate.xaml.cs">
       <DependentUpon>frmUpdate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="frmUpdateUserInfo.xaml.cs">
+      <DependentUpon>frmUpdateUserInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -93,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="frmUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmUpdateUserInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,6 +126,12 @@
     <Content Include="Resources\Icons\ApplicationBar\Directions.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Icons\ApplicationBar\home.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\ApplicationBar\home1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Icons\ApplicationBar\Location.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -127,6 +140,9 @@
     </Content>
     <Content Include="Resources\Icons\ApplicationBar\Route.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\ApplicationBar\search.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Icons\Route\SearchBlack.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
