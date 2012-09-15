@@ -19,9 +19,9 @@ namespace Entity
 
                 SqlCommand cmd = new SqlCommand(sql, _con);
                 cmd.Parameters.Add(new SqlParameter("@Reporter", SqlDbType.NVarChar)).Value = username;
-                cmd.Parameters.Add(new SqlParameter("@ReportTime", SqlDbType.Date)).Value = DateTime.Now;
-                cmd.Parameters.Add(new SqlParameter("@Latitude", SqlDbType.Real)).Value = latitude;
-                cmd.Parameters.Add(new SqlParameter("@Longtitude", SqlDbType.Real)).Value = longitude;
+                cmd.Parameters.Add(new SqlParameter("@ReportTime", SqlDbType.DateTime)).Value = DateTime.Now;
+                cmd.Parameters.Add(new SqlParameter("@Latitude", SqlDbType.Float)).Value = latitude;
+                cmd.Parameters.Add(new SqlParameter("@Longtitude", SqlDbType.Float)).Value = longitude;
                 cmd.Parameters.Add(new SqlParameter("@Status", SqlDbType.NVarChar)).Value = status;
                 cmd.Parameters.Add(new SqlParameter("@SegmentID", SqlDbType.NVarChar)).Value = ""; // Temporary not used
                 cmd.Parameters.Add(new SqlParameter("@Country", SqlDbType.NVarChar)).Value = country;

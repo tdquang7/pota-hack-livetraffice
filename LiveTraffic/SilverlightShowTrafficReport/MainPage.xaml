@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:m="clr-namespace:Microsoft.Maps.MapControl;assembly=Microsoft.Maps.MapControl"
     mc:Ignorable="d"
     d:DesignHeight="1024" d:DesignWidth="768">
 
@@ -11,5 +12,8 @@
             <RowDefinition Height="223*" />
             <RowDefinition Height="77*" />
         </Grid.RowDefinitions>
+        <m:Map x:Name="MyMap" CredentialsProvider="Aql9UN6wo8WWxtUe79TsCxDzWwAir_kVpEBGA0wzvnbNgP_WK2mFpQPCoNgpxHYQ" Mode="Road"  RenderTransformOrigin="0.42,0.557" Margin="0,0,0,0" LogoVisibility="Collapsed">
+            
+        </m:Map>
     </Grid>
 </UserControl>
