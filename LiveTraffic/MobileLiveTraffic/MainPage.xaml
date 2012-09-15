@@ -65,7 +65,7 @@
 							  IsVisible="True"
 							  IsMenuEnabled="True"
 							  Opacity="0.7">
-            <shell:ApplicationBarIconButton x:Name="btnYourLocation" Text="Find me" IconUri="/Resources/Icons/ApplicationBar/home1.png" Click="btnYourLocation_Click" />
+            <shell:ApplicationBarIconButton x:Name="btnYourLocation" Text="Find me" IconUri="/Resources/Icons/ApplicationBar/location.png" Click="btnYourLocation_Click" />
             <shell:ApplicationBarIconButton x:Name="btnSearch" Text="Search" IconUri="/Resources/Icons/ApplicationBar/search.png" Click="btnSearch_Click" />
             <shell:ApplicationBarIconButton x:Name="btnMode" Text="Mode" IconUri="/Resources/Icons/ApplicationBar/Mode.png" Click="btnMode_Click" />
 
