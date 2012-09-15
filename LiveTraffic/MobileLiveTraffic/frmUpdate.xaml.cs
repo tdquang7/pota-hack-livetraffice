@@ -67,15 +67,35 @@ namespace MobileLiveTraffic
             string result = e.Result.Results[0].DisplayName;
             string[] split = result.Split(',');
 
-            string street = split[0];
-            string city = split[1];
-            string country = split[2];
+            street = split[0];
+            country = split[split.Length - 1];
 
-            lbCountry.Content = country;
-            lbCity.Content = city;
-            lbStreet.Content = street;
+            if (split.Length == 3)
+            {
+                city = split[1];
+                district ="";
+            }
+            else
+            {
+                city = split[2];
+                district = split[1];
+            }
+
+
+            lbCountry.Items.Add(country);
+            lbCountry.SelectedIndex = 0;
+            lbCity.Items.Add(city);
+            lbCity.SelectedIndex = 0;
+            lbDistrict.Items.Add(district);
+            lbDistrict.SelectedIndex = 0;
+            lbStreet.Items.Add(street);
+            lbStreet.SelectedIndex = 0;
         }
 
+        private string street;
+        private string city;
+        private string country;
+        private string district;
         private double latitude;
         private double longitude;
         private void btnSlow_Click(object sender, RoutedEventArgs e)
@@ -83,7 +103,7 @@ namespace MobileLiveTraffic
             string status = "slow";
 
             LiveTrafficService.MobileServiceClient service = new LiveTrafficService.MobileServiceClient();
-            service.UpdateStreetStatusAsync(((App)App.Current).Username, lbCountry.Content.ToString(), lbCity.Content.ToString(), lbStreet.Content.ToString(), latitude, longitude, status);
+            service.UpdateStreetStatusAsync(((App)App.Current).Username, lbCountry.SelectedItem.ToString(), lbDistrict.SelectedItem.ToString(), lbCity.SelectedItem.ToString(), lbStreet.SelectedItem.ToString(), latitude, longitude, status);
             service.UpdateStreetStatusCompleted += new EventHandler<LiveTrafficService.UpdateStreetStatusCompletedEventArgs>(service_UpdateStreetStatusCompleted);
         }
 
@@ -105,7 +125,7 @@ namespace MobileLiveTraffic
             string status = "busy";
 
             LiveTrafficService.MobileServiceClient service = new LiveTrafficService.MobileServiceClient();
-            service.UpdateStreetStatusAsync(((App)App.Current).Username, lbCountry.Content.ToString(), lbCity.Content.ToString(), lbStreet.Content.ToString(), latitude, longitude, status);
+            service.UpdateStreetStatusAsync(((App)App.Current).Username, lbCountry.SelectedItem.ToString(), lbCity.SelectedItem.ToString(), lbDistrict.SelectedItem.ToString(), lbStreet.SelectedItem.ToString(), latitude, longitude, status);
             service.UpdateStreetStatusCompleted += new EventHandler<LiveTrafficService.UpdateStreetStatusCompletedEventArgs>(service_UpdateStreetStatusCompleted);
         }
 
