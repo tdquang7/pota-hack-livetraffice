@@ -8,7 +8,7 @@ namespace Entity
 {
     public class DataProvider
     {
-        static string _connectionString = "";
+        static string _connectionString = "workstation id=LiveTraffic.mssql.somee.com;packet size=4096;user id=hatu;pwd=iloveyou;data source=LiveTraffic.mssql.somee.com;persist security info=False;initial catalog=LiveTraffic";
         protected SqlConnection _con;
 
         protected bool _connect()
@@ -24,6 +24,7 @@ namespace Entity
             {
                 return false;
             }
+
         }
     }
 }
