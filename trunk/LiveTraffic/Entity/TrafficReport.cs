@@ -9,7 +9,7 @@ namespace Entity
 {
     public class TrafficReport: DataProvider
     {
-        public void UpdateStreetStatus(string username, string country, string city, string district, string street,
+        public bool UpdateStreetStatus(string username, string country, string city, string district, string street,
                                     double latitude, double longitude, string status)
         {
             if (_connect())
@@ -30,11 +30,15 @@ namespace Entity
                 cmd.Parameters.Add(new SqlParameter("@Street", SqlDbType.NVarChar)).Value = street;
 
                 bool result = cmd.ExecuteNonQuery() > 0;
+                return result;
             }
             else
             {
-                throw new Exception("Cannot connect to server");
+                //throw new Exception("Cannot connect to server");
+                return false;
             }
+
+            return false;
         }
 
         public List<string> GetStreetStatus(string country, string city, string district, string street, double latitude, double longitude, string mode)
