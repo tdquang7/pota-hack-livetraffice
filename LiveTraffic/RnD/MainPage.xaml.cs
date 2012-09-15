@@ -19,6 +19,9 @@ namespace RnD
         public MainPage()
         {
             InitializeComponent();
+
+            DateTime d = DateTime.Now;
+            DateTime b = d.AddHours(-1);
         }
 
         private void btnNextPage_Click(object sender, RoutedEventArgs e)

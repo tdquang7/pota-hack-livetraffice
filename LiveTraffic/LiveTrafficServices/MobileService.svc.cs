@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
 using Entity;
+using System.Collections.Generic;
 
 namespace LiveTrafficServices
 {
@@ -35,11 +36,13 @@ namespace LiveTrafficServices
         /// <param name="latitude"></param>
         /// <param name="longitude"></param>
         /// <param name="mode">same: tren cung duong, near: cac diem xung quanh</param>
-        /// <returns></returns>
+        /// <returns>List of {latitude,longtitude}</returns>
         [OperationContract]
-        public string GetStreetStatus(string country, string city,string district, string street, double latitude, double longitude, string mode)
+        public List<string> GetStreetStatus(string country, string city,string district, string street, double latitude, double longitude)
         {
-            return "busy";
+            //return "busy";
+
+            return null;
         }
 
         // Add more operations here and mark them with [OperationContract]

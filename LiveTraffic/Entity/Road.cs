@@ -7,6 +7,6 @@ namespace Entity
 {
     public class Road
     {
-
+        
     } 
 }
