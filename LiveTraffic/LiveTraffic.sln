@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestServicePhone", "TestSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDataForTesting", "GenerateDataForTesting\GenerateDataForTesting.csproj", "{59FFFE99-22BE-4864-92F1-D4AFE249DF66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightShowTrafficReport", "SilverlightShowTrafficReport\SilverlightShowTrafficReport.csproj", "{CC27884D-98A6-4CF7-B86B-689DEFB767C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -118,6 +120,16 @@ Global
 		{59FFFE99-22BE-4864-92F1-D4AFE249DF66}.Release|Mixed Platforms.Build.0 = Release|x86
 		{59FFFE99-22BE-4864-92F1-D4AFE249DF66}.Release|x86.ActiveCfg = Release|x86
 		{59FFFE99-22BE-4864-92F1-D4AFE249DF66}.Release|x86.Build.0 = Release|x86
+		{CC27884D-98A6-4CF7-B86B-689DEFB767C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC27884D-98A6-4CF7-B86B-689DEFB767C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC27884D-98A6-4CF7-B86B-689DEFB767C3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CC27884D-98A6-4CF7-B86B-689DEFB767C3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CC27884D-98A6-4CF7-B86B-689DEFB767C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CC27884D-98A6-4CF7-B86B-689DEFB767C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC27884D-98A6-4CF7-B86B-689DEFB767C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC27884D-98A6-4CF7-B86B-689DEFB767C3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CC27884D-98A6-4CF7-B86B-689DEFB767C3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CC27884D-98A6-4CF7-B86B-689DEFB767C3}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
