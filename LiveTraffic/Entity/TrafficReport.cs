@@ -20,8 +20,8 @@ namespace Entity
                 SqlCommand cmd = new SqlCommand(sql, _con);
                 cmd.Parameters.Add(new SqlParameter("@Reporter", SqlDbType.NVarChar)).Value = username;
                 cmd.Parameters.Add(new SqlParameter("@ReportTime", SqlDbType.Date)).Value = DateTime.Now;
-                cmd.Parameters.Add(new SqlParameter("@Latitude", SqlDbType.Real)).Value = longitude;
-                cmd.Parameters.Add(new SqlParameter("@Longtitude", SqlDbType.Real)).Value = username;
+                cmd.Parameters.Add(new SqlParameter("@Latitude", SqlDbType.Real)).Value = latitude;
+                cmd.Parameters.Add(new SqlParameter("@Longtitude", SqlDbType.Real)).Value = longitude;
                 cmd.Parameters.Add(new SqlParameter("@Status", SqlDbType.NVarChar)).Value = status;
                 cmd.Parameters.Add(new SqlParameter("@SegmentID", SqlDbType.NVarChar)).Value = ""; // Temporary not used
                 cmd.Parameters.Add(new SqlParameter("@Country", SqlDbType.NVarChar)).Value = country;
@@ -45,14 +45,18 @@ namespace Entity
             List<string> list = new List<string>();
 
             DateTime currentTime = DateTime.Now; // Time of querying
-            DateTime startTime = currentTime.AddHours(-LATEST_HOUR); // One hour a go
+            DateTime startTime = currentTime.AddHours(-LATEST_HOUR); // x hour a go
 
 
             if (_connect())
             {
-                string sql = "select Latitude, Longtitude from TrafficReport where street=@Street and ReportTime beetween @StartTime and @CurrentTime";
+                string sql = "select Latitude, Longtitude from TrafficReport where street=@Street and ReportTime between @StartTime and @EndTime";
 
                 SqlCommand cmd = new SqlCommand(sql, _con);
+                cmd.Parameters.Add(new SqlParameter("@Street", SqlDbType.NVarChar)).Value = street;
+                cmd.Parameters.Add(new SqlParameter("@StartTime", SqlDbType.DateTime)).Value = startTime;
+                cmd.Parameters.Add(new SqlParameter("@EndTime", SqlDbType.DateTime)).Value = currentTime;
+
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
