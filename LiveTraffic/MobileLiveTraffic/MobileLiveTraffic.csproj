@@ -120,11 +120,7 @@
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
-    <None Include="Service References\LiveTrafficeService\MobileService.wsdl" />
-    <None Include="Service References\LiveTrafficeService\MobileService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LiveTrafficeService\MobileService1.wsdl" />
+    <None Include="Service References\LiveTrafficeService\MobileService1.disco" />
     <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
@@ -173,10 +169,14 @@
     <Resource Include="Resources\Icons\Zoom\ZoomOut_White.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <None Include="Service References\LiveTrafficeService\MobileService.disco" />
     <None Include="Service References\LiveTrafficeService\configuration91.svcinfo" />
     <None Include="Service References\LiveTrafficeService\configuration.svcinfo" />
-    <None Include="Service References\LiveTrafficeService\MobileService1.xsd">
+    <None Include="Service References\LiveTrafficeService\MobileService2.wsdl" />
+    <None Include="Service References\LiveTrafficeService\MobileService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LiveTrafficeService\MobileService21.wsdl" />
+    <None Include="Service References\LiveTrafficeService\MobileService21.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\LiveTrafficeService\Reference.svcmap">

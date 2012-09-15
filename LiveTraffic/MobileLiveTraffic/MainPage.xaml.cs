@@ -31,15 +31,21 @@ namespace MobileLiveTraffic
             _gpsWatcher.StatusChanged += new EventHandler<GeoPositionStatusChangedEventArgs>(_gpsWatcher_StatusChanged);
             _gpsWatcher.Start();
 
-            if (App.Username != null)
+            ApplicationBarMenuItem login = ((ApplicationBarMenuItem)(ApplicationBar.MenuItems[3]));
+            ApplicationBarMenuItem update = ((ApplicationBarMenuItem)(ApplicationBar.MenuItems[0]));
+            ApplicationBarMenuItem updateuser = ((ApplicationBarMenuItem)(ApplicationBar.MenuItems[2]));
+
+            if (((App)App.Current).Username != null)
             {
-                btnLogin.IsEnabled = false;
-                btnUpdateTraffic.IsEnabled = true;
+                login.IsEnabled = false;
+                update.IsEnabled = true;
+                updateuser.IsEnabled = true;
             }
             else
             {
-                btnLogin.IsEnabled = true;
-                btnUpdateTraffic.IsEnabled = false;
+                login.IsEnabled = true;
+                update.IsEnabled = false;
+                updateuser.IsEnabled = false;
             }
         }
 
@@ -117,13 +123,6 @@ namespace MobileLiveTraffic
         {
             _gpsWatcher.Start();
         }
-
-        private void applicationBar_StateChanged(object sender, ApplicationBarStateChangedEventArgs e)
-        {
-            int i = 0;
-        }
-
-        
 
     }
 }

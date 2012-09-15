@@ -25,9 +25,9 @@ namespace MobileLiveTraffic
         public PhoneApplicationFrame RootFrame { get; private set; }
 
         internal const string Id = "Aql9UN6wo8WWxtUe79TsCxDzWwAir_kVpEBGA0wzvnbNgP_WK2mFpQPCoNgpxHYQ";
-        private static string _username = null;
+        private string _username = null;
 
-        public static string Username
+        public string Username
         {
             get { return _username; }
             set { _username = value; }

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://66.197.198.204//www.LiveTraffic.somee.com" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Live Traffic" publishMethod="FTP" replaceMatchingFiles="False" userName="kenhoang" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/LiveTrafficServices.dll" publishTime="09/15/2012 15:37:55" />
+    <file relUrl="bin/LiveTrafficServices.pdb" publishTime="09/15/2012 15:37:55" />
+    <file relUrl="MobileService.svc" publishTime="09/15/2012 07:59:59" />
+    <file relUrl="Web.config" publishTime="09/15/2012 16:56:47" />
+  </publishProfile>
+</publishData>
