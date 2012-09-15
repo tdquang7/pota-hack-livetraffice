@@ -1,0 +1,15 @@
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\Bin\Debug\SilverlightShowTrafficReport.dll
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\Bin\Debug\SilverlightShowTrafficReport.pdb
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\Bin\Debug\AppManifest.xaml
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\Bin\Debug\SilverlightShowTrafficReport.xap
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\Bin\Debug\SilverlightShowTrafficReportTestPage.html
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\obj\Debug\App.g.i.cs
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\obj\Debug\MainPage.g.i.cs
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\obj\Debug\SilverlightShowTrafficReport.g.resources
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\obj\Debug\SilverlightShowTrafficReport.dll
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\obj\Debug\SilverlightShowTrafficReport.pdb
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\obj\Debug\XapCacheFile.xml
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\Bin\Debug\Microsoft.Maps.MapControl.Common.dll
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\Bin\Debug\Microsoft.Maps.MapControl.dll
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\Bin\Debug\Microsoft.Maps.MapControl.xml
+C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\SilverlightShowTrafficReport\Bin\Debug\Microsoft.Maps.MapControl.Common.xml

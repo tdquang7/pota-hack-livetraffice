@@ -44,7 +44,8 @@ namespace GenerateDataForTesting
             string country = "Vietnam";
             string city = "Thành Phố Hồ Chí Minh";
             string district = "";
-            string street = "XA LỘ Hà Nội";
+            //string street = "XA LỘ Hà Nội";
+            string street = "ĐƯỜNG D1";
 
             for (int i = 0; i < count; i++)
             {
@@ -57,8 +58,8 @@ namespace GenerateDataForTesting
                 cmd = new SqlCommand(sql, connection);
                 cmd.Parameters.Add(new SqlParameter("@Reporter", SqlDbType.NVarChar)).Value = username;
                 cmd.Parameters.Add(new SqlParameter("@ReportTime", SqlDbType.DateTime)).Value = DateTime.Now;
-                cmd.Parameters.Add(new SqlParameter("@Latitude", SqlDbType.Real)).Value = latitude;
-                cmd.Parameters.Add(new SqlParameter("@Longtitude", SqlDbType.Real)).Value = longitude;
+                cmd.Parameters.Add(new SqlParameter("@Latitude", SqlDbType.Float)).Value = latitude;
+                cmd.Parameters.Add(new SqlParameter("@Longtitude", SqlDbType.Float)).Value = longitude;
                 cmd.Parameters.Add(new SqlParameter("@Status", SqlDbType.NVarChar)).Value = status;
                 cmd.Parameters.Add(new SqlParameter("@SegmentID", SqlDbType.NVarChar)).Value = ""; // Temporary not used
                 cmd.Parameters.Add(new SqlParameter("@Country", SqlDbType.NVarChar)).Value = country;
@@ -80,7 +81,12 @@ namespace GenerateDataForTesting
             double latitude = 0;
             double longitude = 0;
 
-            List<string> list = report.GetStreetStatus("", "", "", "XA LỘ Hà Nội", latitude, longitude, "busy");
+            List<string> list = report.GetStreetStatus("", "", "", "ĐƯỜNG D1", latitude, longitude, "busy");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
