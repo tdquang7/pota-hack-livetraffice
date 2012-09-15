@@ -30,6 +30,17 @@ namespace MobileLiveTraffic
             _gpsWatcher.PositionChanged += new EventHandler<GeoPositionChangedEventArgs<GeoCoordinate>>(_gpsWatcher_PositionChanged);
             _gpsWatcher.StatusChanged += new EventHandler<GeoPositionStatusChangedEventArgs>(_gpsWatcher_StatusChanged);
             _gpsWatcher.Start();
+
+            if (App.Username != null)
+            {
+                btnLogin.IsEnabled = false;
+                btnUpdateTraffic.IsEnabled = true;
+            }
+            else
+            {
+                btnLogin.IsEnabled = true;
+                btnUpdateTraffic.IsEnabled = false;
+            }
         }
 
         private MapMode _lastMode;
@@ -105,6 +116,11 @@ namespace MobileLiveTraffic
         private void btnYourLocation_Click(object sender, EventArgs e)
         {
             _gpsWatcher.Start();
+        }
+
+        private void applicationBar_StateChanged(object sender, ApplicationBarStateChangedEventArgs e)
+        {
+            int i = 0;
         }
 
         

@@ -37,8 +37,25 @@ namespace MobileLiveTraffic
             }
             else
                 App.Username = null;
+        }
 
-               
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            App.Username = null;
+            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+        }
+
+        private void txtUsername_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtUsername.Text != "" && txtPassword.Text != "")
+                btnLogin.IsEnabled = true;
+            else
+                btnLogin.IsEnabled = false;
         }
 
         
