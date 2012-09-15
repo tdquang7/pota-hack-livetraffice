@@ -20,13 +20,13 @@ namespace LiveTrafficServices
         }
 
         [OperationContract]
-        public bool UpdateStreetStatus(string username, string country, string city, string street, double latitude, double longitude, string status)
+        public bool UpdateStreetStatus(string username, string country, string city,string district, string street, double latitude, double longitude, string status)
         {
             return true;
         }
 
         [OperationContract]
-        public string GetStreetStatus(string country, string city, string street, double latitude, double longitude)
+        public string GetStreetStatus(string country, string city,string district, string street, double latitude, double longitude)
         {
             return "busy";
         }
