@@ -27,18 +27,16 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <!--<Grid.Background>
+                <ImageBrush />
+            </Grid.Background>-->
+            <TextBox Height="76" HorizontalAlignment="Left" Margin="10,110,0,0" Name="txtUsername" Text="" VerticalAlignment="Top" Width="422" />
+            <TextBox Height="76" HorizontalAlignment="Left" Margin="10,220,0,0" Name="txtPassword" Text="" VerticalAlignment="Top" Width="422" />
+            <Button Content="Sign in " Height="72" HorizontalAlignment="Left" Margin="10,300,0,0" Name="btnLogin" VerticalAlignment="Top" Width="180" Click="button1_Click" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,75,0,0" Name="lblUsername" Text="User Name" VerticalAlignment="Top" Foreground="White" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,0,0,384" Name="lblPassword" Text="Password" VerticalAlignment="Bottom" Foreground="White" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+            <HyperlinkButton Content="I don't have a LiveTraffice account" Height="34" HorizontalAlignment="Left" Margin="20,425,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="376" />
+        </Grid>
     </Grid>
- 
-    <!--Sample code showing usage of ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
-                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
-
 </phone:PhoneApplicationPage>
