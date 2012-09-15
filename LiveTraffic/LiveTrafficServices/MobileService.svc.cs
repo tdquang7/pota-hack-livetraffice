@@ -13,17 +13,22 @@ namespace LiveTrafficServices
     public class MobileService
     {
         [OperationContract]
-        public void DoWork()
-        {
-            // Add your operation implementation here
-            return;
-        }
-
-        [OperationContract]
         public bool Login(string username, string password)
         {
             User u = new User();
             return u.Login(username, password);
+        }
+
+        [OperationContract]
+        public bool UpdateStreetStatus(string username, string country, string city, string street, double latitude, double longitude, string status)
+        {
+            return true;
+        }
+
+        [OperationContract]
+        public string GetStreetStatus(string country, string city, string street, double latitude, double longitude)
+        {
+            return "busy";
         }
 
         // Add more operations here and mark them with [OperationContract]
