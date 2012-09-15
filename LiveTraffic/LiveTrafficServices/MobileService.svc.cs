@@ -21,8 +21,11 @@ namespace LiveTrafficServices
         }
 
         [OperationContract]
-        public bool UpdateStreetStatus(string username, string country, string city,string district, string street, double latitude, double longitude, string status)
+        public bool UpdateStreetStatus(string username, string country, string city, string district, string street, double latitude, double longitude, string status)
         {
+            TrafficReport report = new TrafficReport();
+            report.UpdateStreetStatus(username, country, city, district, street, latitude, longitude, status);
+
             return true;
         }
 
@@ -38,11 +41,11 @@ namespace LiveTrafficServices
         /// <param name="mode">same: tren cung duong, near: cac diem xung quanh</param>
         /// <returns>List of {latitude,longtitude}</returns>
         [OperationContract]
-        public List<string> GetStreetStatus(string country, string city,string district, string street, double latitude, double longitude)
+        public List<string> GetStreetStatus(string country, string city,string district, string street, double latitude, double longitude, string mode)
         {
-            //return "busy";
-
-            return null;
+            TrafficReport report = new TrafficReport();
+            List<string> list = report.GetStreetStatus(country, city, district, street, latitude, longitude, mode);
+            return list;
         }
 
         // Add more operations here and mark them with [OperationContract]
