@@ -23,6 +23,7 @@
     <MetadataSource Address="http://localhost:4014/MobileService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="MobileService1.xsd" MetadataType="Schema" ID="6c7ece3c-ec8c-4d2a-9270-a3f51b52c6e9" SourceId="1" SourceUrl="http://localhost:4014/MobileService.svc?xsd=xsd1" />
     <MetadataFile FileName="MobileService.wsdl" MetadataType="Wsdl" ID="1bf249f3-7ac2-4956-8288-8515f041b39e" SourceId="1" SourceUrl="http://localhost:4014/MobileService.svc?wsdl" />
     <MetadataFile FileName="MobileService.xsd" MetadataType="Schema" ID="ff289423-4530-4294-8567-10f6d8239a3c" SourceId="1" SourceUrl="http://localhost:4014/MobileService.svc?xsd=xsd0" />
     <MetadataFile FileName="MobileService1.wsdl" MetadataType="Wsdl" ID="04784d79-c1f9-4e20-ac75-ddd99e123777" SourceId="1" SourceUrl="http://localhost:4014/MobileService.svc?wsdl=wsdl0" />

@@ -3,6 +3,7 @@
   <wsdl:types>
     <xsd:schema targetNamespace="/Imports">
       <xsd:import schemaLocation="http://localhost:4014/MobileService.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:4014/MobileService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="MobileService_DoWork_InputMessage">
@@ -11,10 +12,20 @@
   <wsdl:message name="MobileService_DoWork_OutputMessage">
     <wsdl:part name="parameters" element="DoWorkResponse" />
   </wsdl:message>
+  <wsdl:message name="MobileService_Login_InputMessage">
+    <wsdl:part name="parameters" element="Login" />
+  </wsdl:message>
+  <wsdl:message name="MobileService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="LoginResponse" />
+  </wsdl:message>
   <wsdl:portType name="MobileService">
     <wsdl:operation name="DoWork">
       <wsdl:input wsaw:Action="urn:MobileService/DoWork" message="MobileService_DoWork_InputMessage" />
       <wsdl:output wsaw:Action="urn:MobileService/DoWorkResponse" message="MobileService_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="urn:MobileService/Login" message="MobileService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="urn:MobileService/LoginResponse" message="MobileService_Login_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

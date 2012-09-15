@@ -22,7 +22,14 @@ namespace MobileLiveTraffic
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            LiveTrafficeService.MobileServiceClient service = new LiveTrafficeService.MobileServiceClient();
+            service.LoginAsync(txtUsername.Text, txtPassword.Text);
+            service.LoginCompleted += new EventHandler<LiveTrafficeService.LoginCompletedEventArgs>(service_LoginCompleted);
+        }
 
+        void service_LoginCompleted(object sender, LiveTrafficeService.LoginCompletedEventArgs e)
+        {
+            
         }
 
         

@@ -22,10 +22,34 @@ namespace MobileLiveTraffic.LiveTrafficeService {
         System.IAsyncResult BeginDoWork(System.AsyncCallback callback, object asyncState);
         
         void EndDoWork(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:MobileService/Login", ReplyAction="urn:MobileService/LoginResponse")]
+        System.IAsyncResult BeginLogin(string username, string password, System.AsyncCallback callback, object asyncState);
+        
+        bool EndLogin(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface MobileServiceChannel : MobileLiveTraffic.LiveTrafficeService.MobileService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class LoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public LoginCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -37,6 +61,12 @@ namespace MobileLiveTraffic.LiveTrafficeService {
         private EndOperationDelegate onEndDoWorkDelegate;
         
         private System.Threading.SendOrPostCallback onDoWorkCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginLoginDelegate;
+        
+        private EndOperationDelegate onEndLoginDelegate;
+        
+        private System.Threading.SendOrPostCallback onLoginCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -93,6 +123,8 @@ namespace MobileLiveTraffic.LiveTrafficeService {
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DoWorkCompleted;
         
+        public event System.EventHandler<LoginCompletedEventArgs> LoginCompleted;
+        
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
@@ -138,6 +170,54 @@ namespace MobileLiveTraffic.LiveTrafficeService {
                 this.onDoWorkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDoWorkCompleted);
             }
             base.InvokeAsync(this.onBeginDoWorkDelegate, null, this.onEndDoWorkDelegate, this.onDoWorkCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult MobileLiveTraffic.LiveTrafficeService.MobileService.BeginLogin(string username, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLogin(username, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool MobileLiveTraffic.LiveTrafficeService.MobileService.EndLogin(System.IAsyncResult result) {
+            return base.Channel.EndLogin(result);
+        }
+        
+        private System.IAsyncResult OnBeginLogin(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string username = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            return ((MobileLiveTraffic.LiveTrafficeService.MobileService)(this)).BeginLogin(username, password, callback, asyncState);
+        }
+        
+        private object[] OnEndLogin(System.IAsyncResult result) {
+            bool retVal = ((MobileLiveTraffic.LiveTrafficeService.MobileService)(this)).EndLogin(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnLoginCompleted(object state) {
+            if ((this.LoginCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.LoginCompleted(this, new LoginCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void LoginAsync(string username, string password) {
+            this.LoginAsync(username, password, null);
+        }
+        
+        public void LoginAsync(string username, string password, object userState) {
+            if ((this.onBeginLoginDelegate == null)) {
+                this.onBeginLoginDelegate = new BeginOperationDelegate(this.OnBeginLogin);
+            }
+            if ((this.onEndLoginDelegate == null)) {
+                this.onEndLoginDelegate = new EndOperationDelegate(this.OnEndLogin);
+            }
+            if ((this.onLoginCompletedDelegate == null)) {
+                this.onLoginCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoginCompleted);
+            }
+            base.InvokeAsync(this.onBeginLoginDelegate, new object[] {
+                        username,
+                        password}, this.onEndLoginDelegate, this.onLoginCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -225,6 +305,20 @@ namespace MobileLiveTraffic.LiveTrafficeService {
             public void EndDoWork(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 base.EndInvoke("DoWork", _args, result);
+            }
+            
+            public System.IAsyncResult BeginLogin(string username, string password, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = username;
+                _args[1] = password;
+                System.IAsyncResult _result = base.BeginInvoke("Login", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndLogin(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("Login", _args, result)));
+                return _result;
             }
         }
     }
