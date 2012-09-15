@@ -9,9 +9,9 @@
             </customBinding>
         </bindings>
         <client>
-            <endpoint address="http://localhost:4014/MobileService.svc" binding="customBinding"
-                bindingConfiguration="CustomBinding_MobileService" contract="LiveTrafficeService.MobileService"
-                name="CustomBinding_MobileService" />
+            <endpoint address="http://www.livetraffic.somee.com/MobileService.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_MobileService"
+                contract="LiveTrafficeService.MobileService" name="CustomBinding_MobileService" />
         </client>
     </system.serviceModel>
 </configuration>

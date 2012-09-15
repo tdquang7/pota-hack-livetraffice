@@ -22,6 +22,14 @@ namespace MobileLiveTraffic
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            //if (txtUsername.Text=="123")
+            //{
+            //    ((App)App.Current).Username = txtUsername.Text;
+            //    NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+            //}
+            //else
+            //    ((App)App.Current).Username = null;
+
             LiveTrafficeService.MobileServiceClient service = new LiveTrafficeService.MobileServiceClient();
             service.LoginAsync(txtUsername.Text, txtPassword.Text);
             service.LoginCompleted += new EventHandler<LiveTrafficeService.LoginCompletedEventArgs>(service_LoginCompleted);
@@ -32,11 +40,11 @@ namespace MobileLiveTraffic
             bool result = e.Result;
             if (result == true)
             {
-                App.Username = txtUsername.Text;
+                ((App)App.Current).Username = txtUsername.Text;
                 NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative)); 
             }
             else
-                App.Username = null;
+                ((App)App.Current).Username = null;
         }
 
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
@@ -46,7 +54,7 @@ namespace MobileLiveTraffic
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            App.Username = null;
+            ((App)App.Current).Username = null;
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
 
