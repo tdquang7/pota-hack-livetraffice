@@ -82,7 +82,8 @@ namespace Entity
 
         public void GenerateData()
         {
-            double[] gpsLocations = new double[] { 10.85417,106.794252, 
+            double[] gpsLocations = new double[] { 
+                    10.85417,106.794252, 
                     10.854043,106.794037, 
                     10.854191,106.794402,
                     10.854191,106.794402,
@@ -156,19 +157,19 @@ namespace Entity
 
                 // Convert to radian
                 double d2r = Math.PI / 180;
-                double oldLat = latitude;
-                double oldLon = longitude;
-
                 latitude *= d2r;
                 longitude *= d2r;
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    double lat = reader.GetDouble(0) * d2r;
-                    double lon = reader.GetDouble(1) * d2r;
-                    
-                    // Calculate radius from two gps locations 
+                    double oldLat = reader.GetDouble(0);
+                    double oldLon = reader.GetDouble(1);
+
+                    double lat = oldLat * d2r;
+                    double lon = oldLon * d2r;
+
+                    // Calculate radius from two gps locations: Haversine equation
                     double dlat = (latitude - lat); 
                     double dlon = (longitude - lon); 
                     double a = Math.Pow(Math.Sin(dlat / 2.0), 2) + Math.Cos(latitude) * Math.Cos(lat) * Math.Pow(Math.Sin(dlon / 2.0), 2);

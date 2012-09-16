@@ -26,6 +26,9 @@ namespace GenerateDataForTesting.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:MobileService/GenerateData", ReplyAction="urn:MobileService/GenerateDataResponse")]
         void GenerateData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:MobileService/GetNearbyTrafficJam", ReplyAction="urn:MobileService/GetNearbyTrafficJamResponse")]
+        string[] GetNearbyTrafficJam(double latitude, double longitude, string city, string district, string street);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +72,10 @@ namespace GenerateDataForTesting.ServiceReference1 {
         
         public void GenerateData() {
             base.Channel.GenerateData();
+        }
+        
+        public string[] GetNearbyTrafficJam(double latitude, double longitude, string city, string district, string street) {
+            return base.Channel.GetNearbyTrafficJam(latitude, longitude, city, district, street);
         }
     }
 }
