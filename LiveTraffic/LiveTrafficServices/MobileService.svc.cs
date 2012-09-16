@@ -47,7 +47,19 @@ namespace LiveTrafficServices
             List<string> list = report.GetStreetStatus(country, city, district, street, latitude, longitude, mode);
             return list;
         }
+        
+        [OperationContract]
+        public void GenerateData()
+        {
+            TrafficReport report = new TrafficReport();
+            report.GenerateData();
+        }
 
-        // Add more operations here and mark them with [OperationContract]
+        [OperationContract]
+        public List<string> GetNearbyTrafficJam(double latitude, double longitude, string city, string district, string street)
+        {
+            TrafficReport report = new TrafficReport();
+            return report.GetNearbyTrafficJam(latitude, longitude, city, district, street);
+        }
     }
 }

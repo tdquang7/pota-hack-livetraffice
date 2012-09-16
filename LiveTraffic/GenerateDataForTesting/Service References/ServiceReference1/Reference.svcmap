@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="93f2b820-60f8-4105-990c-472e3f292e16" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.livetraffic.somee.com/MobileService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MobileService3.xsd" MetadataType="Schema" ID="5e5df871-5f9b-435c-bb51-35b63053f5c6" SourceId="1" SourceUrl="http://www.livetraffic.somee.com/MobileService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MobileService31.xsd" MetadataType="Schema" ID="d25c37c5-0dc2-4c96-a154-75aa53d32c53" SourceId="1" SourceUrl="http://www.livetraffic.somee.com/MobileService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MobileService2.wsdl" MetadataType="Wsdl" ID="42e4e0b6-65a9-46b9-9eb9-c87a266d9348" SourceId="1" SourceUrl="http://www.livetraffic.somee.com/MobileService.svc?wsdl" />
+    <MetadataFile FileName="MobileService21.wsdl" MetadataType="Wsdl" ID="fda40f37-00fe-4dc3-8611-5017ab73946f" SourceId="1" SourceUrl="http://www.livetraffic.somee.com/MobileService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="MobileService1.disco" MetadataType="Disco" ID="e401ab11-b88e-4358-bfc0-c8cc04214964" SourceId="1" SourceUrl="http://www.livetraffic.somee.com/MobileService.svc?disco" />
+    <MetadataFile FileName="MobileService32.xsd" MetadataType="Schema" ID="d6b32334-ec53-450c-accc-a4b2d14b8d82" SourceId="1" SourceUrl="http://www.livetraffic.somee.com/MobileService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

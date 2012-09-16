@@ -20,11 +20,11 @@ namespace Entity
 
         public bool Insert()
         {
-            if (_connect())
+            if (connect())
             {
                 string sql = "insert into Segment values(@SegmentID, @StartCrossRoadID, @EndCrossRoadID, @LatitudeList, @LongtitudeList)";
 
-                SqlCommand cmd = new SqlCommand(sql, _con);
+                SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add(new SqlParameter("@SegmentID", System.Data.SqlDbType.Int)).Value = SegmentID;
                 cmd.Parameters.Add(new SqlParameter("@StartCrossRoadID", System.Data.SqlDbType.Int)).Value = StartCrossRoadID;
                 cmd.Parameters.Add(new SqlParameter("@EndCrossRoadID", System.Data.SqlDbType.Int)).Value = EndCrossRoadID;

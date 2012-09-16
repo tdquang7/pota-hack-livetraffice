@@ -18,11 +18,11 @@ namespace Entity
 
         public bool Login(string username, string password)
         {
-            if (_connect())
+            if (connect())
             {
                 string sql = "select * from Users where Username = @Username and Password = @Password";
 
-                SqlCommand cmd = new SqlCommand(sql, _con);
+                SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add(new SqlParameter("@Username", System.Data.SqlDbType.NVarChar)).Value = username;
                 cmd.Parameters.Add(new SqlParameter("@Password", System.Data.SqlDbType.NVarChar)).Value = password;
 
