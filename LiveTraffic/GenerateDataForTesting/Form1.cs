@@ -80,10 +80,11 @@ namespace GenerateDataForTesting
 
         private void button3_Click(object sender, EventArgs e)
         {
-            TrafficReport report = new TrafficReport();
+            ServiceReference1.MobileServiceClient client = new ServiceReference1.MobileServiceClient();
+            string[] list = client.GetNearbyTrafficJam(10.8552904129028, 106.788439750671, "Thành Phố Hồ Chí Minh", "Quận 9", "ĐƯỜNG D1");
 
-            List<string> list = report.GetNearbyTrafficJam(10.8552904129028, 106.788439750671, "Thành Phố Hồ Chí Minh", "Quận 9", "ĐƯỜNG D1");
-
+            //TrafficReport report = new TrafficReport();
+            //List<string> list = report.GetNearbyTrafficJam(10.8552904129028, 106.788439750671, "Thành Phố Hồ Chí Minh", "Quận 9", "ĐƯỜNG D1");
         }
     }
 }

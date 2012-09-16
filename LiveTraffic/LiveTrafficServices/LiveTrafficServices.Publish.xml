@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="ftp://66.197.198.204//www.LiveTraffic.somee.com" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Live Traffic" publishMethod="FTP" replaceMatchingFiles="False" userName="kenhoang" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPL/PW5cHYUeDd/Np/RGYlwAAAAACAAAAAAAQZgAAAAEAACAAAAAsIc9Rl7wq5OlhJbrJglpmKUkxAuIij2PY0y8TNNaSqwAAAAAOgAAAAAIAACAAAACqDrMg32YE4N0kPhlzBazxOo6UtKsvP1uOMrpzsBvGUSAAAADtD/uZbLy8d7BqSnpnpMyv1rfhnqKwdcKKkLbQJc/VMEAAAAA64eP1Q7imUUg04q73J1RU3j3VB3ngN+dskUPkFK0zjWzm9xVFgSK1AzTNDCkes5OhHtpT/KE6PmJ3P0zPSAda" SelectedForPublish="True">
-    <file relUrl="bin/LiveTrafficServices.pdb" publishTime="09/16/2012 06:34:18" />
-    <file relUrl="bin/LiveTrafficServices.dll" publishTime="09/16/2012 06:34:18" />
-    <file relUrl="bin/Entity.pdb" publishTime="09/16/2012 06:34:18" />
-    <file relUrl="bin/Entity.dll" publishTime="09/16/2012 06:34:18" />
-    <file relUrl="SilverlightShowTrafficReportTestPage.aspx" publishTime="09/16/2012 01:24:28" />
-    <file relUrl="Web.config" publishTime="09/16/2012 06:34:37" />
-    <file relUrl="Silverlight.js" publishTime="09/16/2012 01:24:28" />
-    <file relUrl="SilverlightShowTrafficReportTestPage.html" publishTime="09/16/2012 01:24:28" />
-    <file relUrl="ClientBin/SilverlightShowTrafficReport.xap" publishTime="09/16/2012 06:22:34" />
-    <file relUrl="MobileService.svc" publishTime="09/15/2012 07:59:59" />
+  <publishProfile publishUrl="ftp://66.197.198.204//www.LiveTraffic.somee.com" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Live Traffic" publishMethod="FTP" replaceMatchingFiles="False" userName="kenhoang" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3ctoiHrwt0iGyF3P0DvsDwAAAAACAAAAAAAQZgAAAAEAACAAAADQ4Y108s0SB9VxCfczILtTz3HHLt2SKZhD5CdciB3lOwAAAAAOgAAAAAIAACAAAADxdS+DC+UktrxXTRcajM93sMdkPjEKQy92w2tXFPSDKSAAAADmvkQg7wpv1aMUsFWI1WxvavBB9dsonXHNSSMdXLJDdkAAAAByZy72azObhrAaPho2mt+W4zuYuw4128Gv8TCN34y7RQ/+LYmNWZeG2SBSN+pZgn6lxVULlQb01qMRhOLf7HQ5" SelectedForPublish="True">
+    <file relUrl="bin/LiveTrafficServices.pdb" publishTime="09/16/2012 11:53:39" />
+    <file relUrl="bin/LiveTrafficServices.dll" publishTime="09/16/2012 11:53:39" />
+    <file relUrl="bin/Entity.pdb" publishTime="09/16/2012 11:53:38" />
+    <file relUrl="bin/Entity.dll" publishTime="09/16/2012 11:53:38" />
+    <file relUrl="SilverlightShowTrafficReportTestPage.aspx" publishTime="09/16/2012 00:55:42" />
+    <file relUrl="Web.config" publishTime="09/16/2012 11:53:52" />
+    <file relUrl="Silverlight.js" publishTime="09/16/2012 00:55:42" />
+    <file relUrl="SilverlightShowTrafficReportTestPage.html" publishTime="09/16/2012 00:55:42" />
+    <file relUrl="ClientBin/SilverlightShowTrafficReport.xap" publishTime="09/16/2012 11:05:52" />
+    <file relUrl="MobileService.svc" publishTime="09/15/2012 11:05:19" />
   </publishProfile>
 </publishData>

@@ -31,6 +31,12 @@
   <wsdl:message name="MobileService_GenerateData_OutputMessage">
     <wsdl:part name="parameters" element="GenerateDataResponse" />
   </wsdl:message>
+  <wsdl:message name="MobileService_GetNearbyTrafficJam_InputMessage">
+    <wsdl:part name="parameters" element="GetNearbyTrafficJam" />
+  </wsdl:message>
+  <wsdl:message name="MobileService_GetNearbyTrafficJam_OutputMessage">
+    <wsdl:part name="parameters" element="GetNearbyTrafficJamResponse" />
+  </wsdl:message>
   <wsdl:portType name="MobileService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="urn:MobileService/Login" message="MobileService_Login_InputMessage" />
@@ -47,6 +53,10 @@
     <wsdl:operation name="GenerateData">
       <wsdl:input wsaw:Action="urn:MobileService/GenerateData" message="MobileService_GenerateData_InputMessage" />
       <wsdl:output wsaw:Action="urn:MobileService/GenerateDataResponse" message="MobileService_GenerateData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearbyTrafficJam">
+      <wsdl:input wsaw:Action="urn:MobileService/GetNearbyTrafficJam" message="MobileService_GetNearbyTrafficJam_InputMessage" />
+      <wsdl:output wsaw:Action="urn:MobileService/GetNearbyTrafficJamResponse" message="MobileService_GetNearbyTrafficJam_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
