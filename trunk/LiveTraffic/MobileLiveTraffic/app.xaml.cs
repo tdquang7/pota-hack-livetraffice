@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Controls.Maps;
+using MobileLiveTraffic.Utility;
 
 namespace MobileLiveTraffic
 {
@@ -33,12 +34,12 @@ namespace MobileLiveTraffic
             set { _username = value; }
         }
 
-        private string _searchMode;
+        private SearchCriteria _searchInfo;
 
-        public string SearchMode
+        public SearchCriteria SearchInfo
         {
-            get { return _searchMode; }
-            set { _searchMode = value; }
+            get { return _searchInfo; }
+            set { _searchInfo = value; }
         }
 
         private readonly CredentialsProvider _credentialsProvider = new ApplicationIdCredentialsProvider(App.Id);

@@ -2,3 +2,7 @@ C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\TestServicePhone\bin\TestService
 C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\TestServicePhone\bin\TestServicePhone.pdb
 C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\TestServicePhone\obj\Debug\TestServicePhone.dll
 C:\Users\tdqua_000\Desktop\Checkout\LiveTraffic\TestServicePhone\obj\Debug\TestServicePhone.pdb
+Y:\SkyDrive\Working\m2Work Hackathon 2012\pota-hack-livetraffice\LiveTraffic\TestServicePhone\bin\TestServicePhone.dll
+Y:\SkyDrive\Working\m2Work Hackathon 2012\pota-hack-livetraffice\LiveTraffic\TestServicePhone\bin\TestServicePhone.pdb
+Y:\SkyDrive\Working\m2Work Hackathon 2012\pota-hack-livetraffice\LiveTraffic\TestServicePhone\obj\Debug\TestServicePhone.dll
+Y:\SkyDrive\Working\m2Work Hackathon 2012\pota-hack-livetraffice\LiveTraffic\TestServicePhone\obj\Debug\TestServicePhone.pdb

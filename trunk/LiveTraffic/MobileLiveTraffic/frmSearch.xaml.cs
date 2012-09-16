@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Controls.Maps;
 using System.Device.Location;
+using MobileLiveTraffic.Utility;
 
 namespace MobileLiveTraffic
 {
@@ -20,6 +21,7 @@ namespace MobileLiveTraffic
         public frmSearch()
         {
             InitializeComponent();
+            //((App)App.Current).SearchInfo = null;
             MakeReverseGeocodeRequest();
         }
 
@@ -42,8 +44,8 @@ namespace MobileLiveTraffic
                 GeocodeService1.UserLocation point = new GeocodeService1.UserLocation();
                 point.Latitude = watcher.Position.Location.Latitude;
                 point.Longitude = watcher.Position.Location.Longitude;
-                latitude = point.Latitude;
-                longitude = point.Longitude;
+                searchInfo.Latitude = point.Latitude;
+                searchInfo.Longitude = point.Longitude;
 
                 watcher.Stop();
                 reverseGeocodeRequest.Location = point;
@@ -64,58 +66,45 @@ namespace MobileLiveTraffic
         {
             string result = e.Result.Results[0].DisplayName;
             string[] split = result.Split(',');
-
-            street = split[0];
-            country = split[split.Length - 1];
+            searchInfo.Street = split[0].Trim();
+            searchInfo.Country = split[split.Length - 1].Trim();
 
             if (split.Length == 3)
             {
-                city = split[1];
-                district = "";
+                searchInfo.City = split[1].Trim();
+                searchInfo.District = "";
             }
             else
             {
-                city = split[2];
-                district = split[1];
+                searchInfo.City = split[2].Trim();
+                searchInfo.District = split[1].Trim();
             }
 
 
-            lbCountry.Items.Add(country);
+            lbCountry.Items.Add(searchInfo.Country);
             lbCountry.SelectedIndex = 0;
-            lbCity.Items.Add(city);
+            lbCity.Items.Add(searchInfo.City);
             lbCity.SelectedIndex = 0;
-            lbDistrict.Items.Add(district);
+            lbDistrict.Items.Add(searchInfo.District);
             lbDistrict.SelectedIndex = 0;
-            lbStreet.Items.Add(street);
+            lbStreet.Items.Add(searchInfo.Street);
             lbStreet.SelectedIndex = 0;
         }
 
-        private string street;
-        private string city;
-        private string country;
-        private string district;
-        private double latitude;
-        private double longitude;
-        private void lblSearchSameStreet_Tap(object sender, GestureEventArgs e)
-        {
-            ((App)App.Current).SearchMode = "same";
-            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
-        }
-
-        private void lblNearest_Tap(object sender, GestureEventArgs e)
-        {
-            ((App)App.Current).SearchMode = "near";
-            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
-        }
+        private SearchCriteria searchInfo = new SearchCriteria();
 
         private void btnNear_Click(object sender, RoutedEventArgs e)
         {
-
+            searchInfo.Mode = "near";
+            ((App)App.Current).SearchInfo = searchInfo;
+            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
 
         private void btnSame_Click(object sender, RoutedEventArgs e)
         {
-
+            searchInfo.Mode = "same";
+            ((App)App.Current).SearchInfo = searchInfo;
+            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
     }
 }

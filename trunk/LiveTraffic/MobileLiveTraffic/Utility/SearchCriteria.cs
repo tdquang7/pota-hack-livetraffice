@@ -56,5 +56,12 @@ namespace MobileLiveTraffic.Utility
             set { longitude = value; }
         }
 
+        private string mode;
+
+        public string Mode
+        {
+            get { return mode; }
+            set { mode = value; }
+        }
     }
 }

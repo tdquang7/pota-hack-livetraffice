@@ -65,6 +65,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\PushpinTypeBrushConverter.cs" />
     <Compile Include="frmLogin.xaml.cs">
       <DependentUpon>frmLogin.xaml</DependentUpon>
     </Compile>
@@ -77,9 +78,13 @@
     <Compile Include="frmUpdateUserInfo.xaml.cs">
       <DependentUpon>frmUpdateUserInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\TouchBehavior.cs" />
+    <Compile Include="Helpers\TouchBehaviorEventArgs.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\PushpinCatalog.cs" />
+    <Compile Include="Models\PushpinModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\GeocodeService1\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -149,6 +154,9 @@
     <None Include="Service References\LiveTrafficService\MobileService.disco" />
     <None Include="Service References\LiveTrafficService\configuration91.svcinfo" />
     <None Include="Service References\LiveTrafficService\configuration.svcinfo" />
+    <None Include="Service References\LiveTrafficService\MobileService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\LiveTrafficService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -159,6 +167,30 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Resources\Icons\Pushpins\PushpinCar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\Pushpins\PushpinBicycle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\Pushpins\PushpinDrink.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\Pushpins\PushpinFuel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\Pushpins\PushpinHouse.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\Pushpins\PushpinLocation.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\Pushpins\PushpinRestaurant.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\Pushpins\PushpinShop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="ServiceReferences.ClientConfig" />
     <None Include="Service References\LiveTrafficService\MobileService.wsdl" />
     <None Include="Service References\LiveTrafficService\MobileService.xsd">
@@ -224,6 +256,7 @@
     <WCFMetadataStorage Include="Service References\GeocodeService1\" />
     <WCFMetadataStorage Include="Service References\LiveTrafficService\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

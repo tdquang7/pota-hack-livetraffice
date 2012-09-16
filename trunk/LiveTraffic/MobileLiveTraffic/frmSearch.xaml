@@ -36,8 +36,8 @@
             <ListBox Background="White" Height="45" HorizontalAlignment="Left" Margin="10,342,0,0" Name="lbStreet" VerticalAlignment="Top" Width="411" />
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="10,208,0,0" Name="textBlock4" Text="District" VerticalAlignment="Top" />
             <ListBox Background="White" Height="45" HorizontalAlignment="Left" Margin="10,244,0,0" Name="lbDistrict" VerticalAlignment="Top" Width="411" />
-            <Button Content="Near places" FontSize="20" Height="81" HorizontalAlignment="Left" Margin="238,414,0,0" Name="btnSame" VerticalAlignment="Top" Width="183" Click="btnSame_Click" />
-            <Button Content="Same street" FontSize="20" Height="81" HorizontalAlignment="Left" Margin="10,414,0,0" Name="btnNear" VerticalAlignment="Top" Width="189" Click="btnNear_Click" />
+            <Button Content="Near places" FontSize="20" Height="81" HorizontalAlignment="Left" Margin="238,414,0,0" Name="btnSame" VerticalAlignment="Top" Width="183" Click="btnNear_Click" />
+            <Button Content="Same street" FontSize="20" Height="81" HorizontalAlignment="Left" Margin="10,414,0,0" Name="btnNear" VerticalAlignment="Top" Width="189" Click="btnSame_Click" />
         </Grid>
     </Grid>
  

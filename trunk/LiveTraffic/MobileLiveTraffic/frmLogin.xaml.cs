@@ -18,6 +18,9 @@ namespace MobileLiveTraffic
         public frmLogin()
         {
             InitializeComponent();
+
+            txtNoMaskPass = new TextBox();
+            txtNoMaskPass.TextChanged+=new TextChangedEventHandler(txtUsername_TextChanged);
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -52,27 +55,60 @@ namespace MobileLiveTraffic
 
         private void txtUsername_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (txtUsername.Text != "" && txtPassword.Password != "")
-                btnLogin.IsEnabled = true;
-            else
-                btnLogin.IsEnabled = false;
+            if (txtUsername.Text != "")
+            {
+                if (pnlPasswordContainer.Children[0] is PasswordBox && txtPassword.Password != "")
+                {
+                    btnLogin.IsEnabled = true;
+                    return;
+                }
+                else if (pnlPasswordContainer.Children[0] is TextBox && txtNoMaskPass.Text != "")
+                {
+                    btnLogin.IsEnabled = true;
+                    return;
+                }
+            }
+
+            btnLogin.IsEnabled = false;
         }
+
+        private TextBox txtNoMaskPass = null;
 
         private void chkShowPassword_Unchecked(object sender, RoutedEventArgs e)
         {
+            txtPassword.Password = txtNoMaskPass.Text;
+            txtPassword.Margin = txtNoMaskPass.Margin;
 
+            pnlPasswordContainer.Children.Clear();
+            pnlPasswordContainer.Children.Add(txtPassword);
         }
 
         private void chkShowPassword_Checked(object sender, RoutedEventArgs e)
         {
+            txtNoMaskPass.Text = txtPassword.Password;
+            txtNoMaskPass.Margin = txtPassword.Margin;
+
+            pnlPasswordContainer.Children.Clear();
+            pnlPasswordContainer.Children.Add(txtNoMaskPass);
         }
 
         private void txtPassword_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            if (txtUsername.Text != "" && txtPassword.Password != "")
-                btnLogin.IsEnabled = true;
-            else
-                btnLogin.IsEnabled = false;
+            if (txtUsername.Text != "")
+            {
+                if (pnlPasswordContainer.Children[0] is PasswordBox && txtPassword.Password != "")
+                {
+                    btnLogin.IsEnabled = true;
+                    return;
+                }
+                else if (pnlPasswordContainer.Children[0] is TextBox && txtNoMaskPass.Text != "")
+                {
+                    btnLogin.IsEnabled = true;
+                    return;
+                }
+            }
+
+            btnLogin.IsEnabled = false;
         }
 
     }

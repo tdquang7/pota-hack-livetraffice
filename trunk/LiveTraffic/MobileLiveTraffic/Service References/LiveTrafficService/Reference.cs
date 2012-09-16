@@ -31,7 +31,7 @@ namespace MobileLiveTraffic.LiveTrafficService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:MobileService/GetStreetStatus", ReplyAction="urn:MobileService/GetStreetStatusResponse")]
         System.IAsyncResult BeginGetStreetStatus(string country, string city, string district, string street, double latitude, double longitude, string mode, System.AsyncCallback callback, object asyncState);
         
-        string EndGetStreetStatus(System.IAsyncResult result);
+        System.Collections.ObjectModel.ObservableCollection<string> EndGetStreetStatus(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -87,10 +87,10 @@ namespace MobileLiveTraffic.LiveTrafficService {
             this.results = results;
         }
         
-        public string Result {
+        public System.Collections.ObjectModel.ObservableCollection<string> Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((System.Collections.ObjectModel.ObservableCollection<string>)(this.results[0]));
             }
         }
     }
@@ -294,7 +294,7 @@ namespace MobileLiveTraffic.LiveTrafficService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        string MobileLiveTraffic.LiveTrafficService.MobileService.EndGetStreetStatus(System.IAsyncResult result) {
+        System.Collections.ObjectModel.ObservableCollection<string> MobileLiveTraffic.LiveTrafficService.MobileService.EndGetStreetStatus(System.IAsyncResult result) {
             return base.Channel.EndGetStreetStatus(result);
         }
         
@@ -310,7 +310,7 @@ namespace MobileLiveTraffic.LiveTrafficService {
         }
         
         private object[] OnEndGetStreetStatus(System.IAsyncResult result) {
-            string retVal = ((MobileLiveTraffic.LiveTrafficService.MobileService)(this)).EndGetStreetStatus(result);
+            System.Collections.ObjectModel.ObservableCollection<string> retVal = ((MobileLiveTraffic.LiveTrafficService.MobileService)(this)).EndGetStreetStatus(result);
             return new object[] {
                     retVal};
         }
@@ -469,9 +469,9 @@ namespace MobileLiveTraffic.LiveTrafficService {
                 return _result;
             }
             
-            public string EndGetStreetStatus(System.IAsyncResult result) {
+            public System.Collections.ObjectModel.ObservableCollection<string> EndGetStreetStatus(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                string _result = ((string)(base.EndInvoke("GetStreetStatus", _args, result)));
+                System.Collections.ObjectModel.ObservableCollection<string> _result = ((System.Collections.ObjectModel.ObservableCollection<string>)(base.EndInvoke("GetStreetStatus", _args, result)));
                 return _result;
             }
         }
