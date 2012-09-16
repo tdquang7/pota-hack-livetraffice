@@ -22,6 +22,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestServicePhone", "TestServicePhone\TestServicePhone.csproj", "{E3B33D5C-0820-4F82-A5D5-A137B2962E18}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDataForTesting", "GenerateDataForTesting\GenerateDataForTesting.csproj", "{59FFFE99-22BE-4864-92F1-D4AFE249DF66}"
+	ProjectSection(ProjectDependencies) = postProject
+		{01D84405-15E5-456F-B31A-0395601BF2F7} = {01D84405-15E5-456F-B31A-0395601BF2F7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightShowTrafficReport", "SilverlightShowTrafficReport\SilverlightShowTrafficReport.csproj", "{CC27884D-98A6-4CF7-B86B-689DEFB767C3}"
 EndProject
