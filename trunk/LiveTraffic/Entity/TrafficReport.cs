@@ -53,7 +53,7 @@ namespace Entity
             List<string> list = new List<string>();
 
             DateTime currentTime = DateTime.Now; // Time of querying
-            DateTime startTime = currentTime.AddHours(-LATEST_HOUR); // x hour a go
+            DateTime startTime = currentTime.AddHours(-LATEST_HOUR); // x hour ago
 
 
             if (connect())
@@ -194,6 +194,49 @@ namespace Entity
             }
 
             
+            return list;
+        }
+
+        // Given an address name, in this case is simply street name, show all the traffic status here
+        // In this case, address is only street name
+        public List<string> GetTrafficFromAdrress(string address)
+        {
+            List<string> list = new List<string>();
+
+            if (connect())
+            {
+                const int LATEST_HOUR = 3;
+                const string SEPERATOR = ",";
+
+                DateTime currentTime = DateTime.Now; // Time of querying
+                DateTime startTime = currentTime.AddHours(-LATEST_HOUR); // x hour a go
+
+                string sql = "select Latitude, Longtitude from TrafficReport where Street like @Address";// and ReportTime between @StartTime and @CurrentTime";
+
+                SqlCommand cmd = new SqlCommand(sql, _connection);
+                cmd.Parameters.Add(new SqlParameter("@Address", SqlDbType.NVarChar)).Value = address;
+                cmd.Parameters.Add(new SqlParameter("@StartTime", SqlDbType.DateTime)).Value = startTime;
+                cmd.Parameters.Add(new SqlParameter("@CurrentTime", SqlDbType.DateTime)).Value = currentTime;
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string lat = reader.GetDouble(0).ToString();
+                    string lon = reader.GetDouble(1).ToString();
+
+                    list.Add(lat + SEPERATOR + lon);
+                }
+
+
+                reader.Close();
+                _connection.Close();
+            }
+            else
+            {
+
+            }
+
             return list;
         }
 

@@ -27,6 +27,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDataForTesting", "G
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightShowTrafficReport", "SilverlightShowTrafficReport\SilverlightShowTrafficReport.csproj", "{CC27884D-98A6-4CF7-B86B-689DEFB767C3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{01D84405-15E5-456F-B31A-0395601BF2F7} = {01D84405-15E5-456F-B31A-0395601BF2F7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

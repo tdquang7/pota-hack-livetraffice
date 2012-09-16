@@ -54,6 +54,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientBin\SilverlightApplication1.xap" />
     <Content Include="ClientBin\SilverlightShowTrafficReport.xap" />
     <Content Include="MobileService.svc" />
     <Content Include="Silverlight.js" />

@@ -61,5 +61,12 @@ namespace LiveTrafficServices
             TrafficReport report = new TrafficReport();
             return report.GetNearbyTrafficJam(latitude, longitude, city, district, street);
         }
+
+        [OperationContract]
+        public List<string> GetTrafficFromAdrress(string address)
+        {
+             TrafficReport report = new TrafficReport();
+             return report.GetTrafficFromAdrress(address);
+        }
     }
 }

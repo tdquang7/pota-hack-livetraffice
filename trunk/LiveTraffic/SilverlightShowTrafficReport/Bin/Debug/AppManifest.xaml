@@ -3,5 +3,8 @@
     <AssemblyPart x:Name="SilverlightShowTrafficReport" Source="SilverlightShowTrafficReport.dll" />
     <AssemblyPart x:Name="Microsoft.Maps.MapControl.Common" Source="Microsoft.Maps.MapControl.Common.dll" />
     <AssemblyPart x:Name="Microsoft.Maps.MapControl" Source="Microsoft.Maps.MapControl.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Data.Input" Source="System.Windows.Controls.Data.Input.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Navigation" Source="System.Windows.Controls.Navigation.dll" />
+    <AssemblyPart x:Name="System.ComponentModel.DataAnnotations" Source="System.ComponentModel.DataAnnotations.dll" />
   </Deployment.Parts>
 </Deployment>
