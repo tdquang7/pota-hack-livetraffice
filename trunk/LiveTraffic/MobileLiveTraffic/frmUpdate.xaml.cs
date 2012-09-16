@@ -21,7 +21,8 @@ namespace MobileLiveTraffic
         {
             InitializeComponent();
 
-            MakeReverseGeocodeRequest();   
+            MakeReverseGeocodeRequest();
+
         }
 
 
@@ -54,6 +55,8 @@ namespace MobileLiveTraffic
                 GeocodeService1.GeocodeServiceClient geocodeService = new GeocodeService1.GeocodeServiceClient("BasicHttpBinding_IGeocodeService");
                 geocodeService.ReverseGeocodeAsync(reverseGeocodeRequest);
                 geocodeService.ReverseGeocodeCompleted += new EventHandler<GeocodeService1.ReverseGeocodeCompletedEventArgs>(geocodeService_ReverseGeocodeCompleted);
+
+                //LoadNearbyAddress(new GeoCoordinate(point.Latitude, point.Longitude), 10);
             }
             catch (Exception ex)
             {
@@ -90,6 +93,95 @@ namespace MobileLiveTraffic
             lbDistrict.SelectedIndex = 0;
             lbStreet.Items.Add(street);
             lbStreet.SelectedIndex = 0;
+
+            //List<string> districts = new List<string>();
+            //districts.Add("Thu Duc");
+            //districts.Add("Quận 9");
+            //bool flag = true;
+
+            //foreach (string temp in districts)
+            //{
+            //    flag = true;
+            //    foreach (string d in lbDistrict.Items)
+            //        if (d.Equals(temp))
+            //        {
+            //            flag = false;
+            //            break;
+            //        }
+
+            //    if(flag)
+            //        lbDistrict.Items.Add(temp);
+            //}
+
+            //List<string> streets = new List<string>();
+            //streets.Add("ĐƯỜNG D1");
+            //streets.Add("XA LỘ Hà Nội");
+
+            //foreach (string temp in streets)
+            //{
+            //    flag = true;
+            //    foreach (string d in lbStreet.Items)
+            //        if (d.Equals(temp))
+            //        {
+            //            flag = false;
+            //            break;
+            //        }
+
+            //    if(flag)
+            //        lbStreet.Items.Add(temp);
+            //}
+
+            //lbDistrict.SelectedIndex = 0;
+            //lbStreet.SelectedIndex = 0;
+        }
+
+        private void LoadNearbyAddress(GeoCoordinate location, double radious)
+        {
+            double d2r = Math.PI / 180;
+            double increment = 90*d2r;
+            const int EARTH_RADIUS = 6371; // km
+
+            double rlat0, rlon0, rlat, rlon, lat, lon;
+            rlat0 = location.Latitude*Math.PI/180;
+            rlon0 = location.Longitude*Math.PI/180;
+
+            double x0, y0, x, y, z;
+            x0 = Math.Cos(rlat0) * Math.Cos(rlon0);
+            y0 = Math.Cos(rlat0) * Math.Sin(rlon0);
+            z = Math.Sin(rlat0);
+
+            double hyp;
+
+            string key = App.Id;
+            GeocodeService1.ReverseGeocodeRequest reverseGeocodeRequest = new GeocodeService1.ReverseGeocodeRequest();
+            GeocodeService1.GeocodeServiceClient geocodeService = new GeocodeService1.GeocodeServiceClient("BasicHttpBinding_IGeocodeService");
+            // Set the credentials using a valid Bing Maps key
+            reverseGeocodeRequest.Credentials = new Credentials();
+            reverseGeocodeRequest.Credentials.ApplicationId = key;
+            
+            for (double alpha = 0; alpha < Math.PI; alpha = alpha + increment)
+            {
+                x = radious * Math.Sin(alpha) + x0;
+                y = radious * Math.Cos(alpha) + y0;
+
+                rlon = Math.Atan2(y, x);
+                hyp = Math.Sqrt(x*x+y*y);
+                rlat = Math.Atan2(z, hyp);
+
+                lat = rlat * 180 / Math.PI;
+                lon = rlon * 180 / Math.PI;
+
+                GeocodeService1.UserLocation point = new GeocodeService1.UserLocation();
+                point.Latitude = lat;
+                point.Longitude = lon;
+                latitude = point.Latitude;
+                longitude = point.Longitude;
+
+                reverseGeocodeRequest.Location = point;
+                geocodeService.ReverseGeocodeAsync(reverseGeocodeRequest);
+                geocodeService.ReverseGeocodeCompleted += new EventHandler<GeocodeService1.ReverseGeocodeCompletedEventArgs>(geocodeService_ReverseGeocodeCompleted);
+            }
+
         }
 
         private string street;

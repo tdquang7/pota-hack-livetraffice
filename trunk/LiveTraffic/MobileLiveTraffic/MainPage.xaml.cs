@@ -87,6 +87,7 @@ namespace MobileLiveTraffic
             else
             {
                 _userPushPin.Location = GetUserLocation();
+                map.Children.Add(_userPushPin);
             }
         }
 
@@ -160,7 +161,6 @@ namespace MobileLiveTraffic
             Pushpin pin = null;
 
             map.Children.Clear();
-            CreateUserPushPin();
 
             foreach (string location in e.Result)
             {
@@ -170,6 +170,8 @@ namespace MobileLiveTraffic
 
                 CreateTrafficPushPin(new GeoCoordinate(double.Parse(split[0]), double.Parse(split[1])));
             }
+
+            CreateUserPushPin();
         }
 
         private void MoveTo(GeoCoordinate location, double zoom)
