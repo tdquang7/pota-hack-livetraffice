@@ -26,7 +26,15 @@ namespace RnD
 
         private void btnNextPage_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/ResultPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/TestPushPin.xaml", UriKind.Relative));
+            //LocalService.MobileServiceClient service = new LocalService.MobileServiceClient();
+            //service.UpdateStreetStatusAsync("Tester1", "Vietnam", "", "", "ĐƯỜNG D1", 0, 0, "");
+            //service.UpdateStreetStatusCompleted += new EventHandler<LocalService.UpdateStreetStatusCompletedEventArgs>(service_UpdateStreetStatusCompleted);
+        }
+
+        void service_UpdateStreetStatusCompleted(object sender, LocalService.UpdateStreetStatusCompletedEventArgs e)
+        {
+            MessageBox.Show(e.Result.ToString());
         }
     }
 }

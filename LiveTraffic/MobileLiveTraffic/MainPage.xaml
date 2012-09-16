@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:MobileLiveTraffic.Models"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -26,12 +27,6 @@
                     CredentialsProvider="{Binding CredentialsProvider}"                    
                     ZoomLevel="{Binding Zoom, Mode=TwoWay}"
                     Center="{Binding Center, Mode=TwoWay}">
-                
-                <!--<Button x:Name="btnYourLocation" 
-                    HorizontalAlignment="Left" VerticalAlignment="Stretch" 
-                    Height="48" Width="48" Margin="8,180,0,0"
-                    Style="{StaticResource ButtonZoomInStyle}" Click="btnYourLocation_Click" VerticalContentAlignment="Top" />-->
-
             </my:Map>
             
         </Border>
@@ -65,7 +60,7 @@
 							  IsVisible="True"
 							  IsMenuEnabled="True"
 							  Opacity="0.7">
-            <shell:ApplicationBarIconButton x:Name="btnYourLocation" Text="Find me" IconUri="/Resources/Icons/ApplicationBar/location.png" Click="btnYourLocation_Click" />
+            <shell:ApplicationBarIconButton x:Name="btnYourLocation" Text="Track me" IconUri="/Resources/Icons/ApplicationBar/location.png" Click="btnYourLocation_Click" />
             <shell:ApplicationBarIconButton x:Name="btnSearch" Text="Search" IconUri="/Resources/Icons/ApplicationBar/search.png" Click="btnSearch_Click" />
             <shell:ApplicationBarIconButton x:Name="btnMode" Text="Mode" IconUri="/Resources/Icons/ApplicationBar/Mode.png" Click="btnMode_Click" />
 

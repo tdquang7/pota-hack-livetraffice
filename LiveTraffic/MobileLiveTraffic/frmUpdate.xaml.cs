@@ -67,18 +67,18 @@ namespace MobileLiveTraffic
             string result = e.Result.Results[0].DisplayName;
             string[] split = result.Split(',');
 
-            street = split[0];
-            country = split[split.Length - 1];
+            street = split[0].Trim();
+            country = split[split.Length - 1].Trim();
 
             if (split.Length == 3)
             {
-                city = split[1];
+                city = split[1].Trim();
                 district ="";
             }
             else
             {
-                city = split[2];
-                district = split[1];
+                city = split[2].Trim();
+                district = split[1].Trim();
             }
 
 
@@ -103,7 +103,7 @@ namespace MobileLiveTraffic
             string status = "slow";
 
             LiveTrafficService.MobileServiceClient service = new LiveTrafficService.MobileServiceClient();
-            service.UpdateStreetStatusAsync(((App)App.Current).Username, lbCountry.SelectedItem.ToString(), lbDistrict.SelectedItem.ToString(), lbCity.SelectedItem.ToString(), lbStreet.SelectedItem.ToString(), latitude, longitude, status);
+            service.UpdateStreetStatusAsync(((App)App.Current).Username, lbCountry.SelectedItem.ToString(), lbCity.SelectedItem.ToString(), lbDistrict.SelectedItem.ToString(), lbStreet.SelectedItem.ToString(), latitude, longitude, status);
             service.UpdateStreetStatusCompleted += new EventHandler<LiveTrafficService.UpdateStreetStatusCompletedEventArgs>(service_UpdateStreetStatusCompleted);
         }
 
