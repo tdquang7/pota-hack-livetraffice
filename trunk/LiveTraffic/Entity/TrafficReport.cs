@@ -44,6 +44,9 @@ namespace Entity
 
         public List<string> GetStreetStatus(string country, string city, string district, string street, double latitude, double longitude, string mode)
         {
+            if (mode == "near")
+                return GetNearbyTrafficJam(latitude, longitude, city, district, street);
+
             const int LATEST_HOUR = 3;
             const string SEPERATOR = ",";
 
@@ -55,8 +58,8 @@ namespace Entity
 
             if (connect())
             {
-                string sql = "select Latitude, Longtitude from TrafficReport where street=@Street and ReportTime between @StartTime and @EndTime";
-
+                string sql = "select Latitude, Longtitude from TrafficReport where street like @Street and ReportTime between @StartTime and @EndTime";
+                
                 SqlCommand cmd = new SqlCommand(sql, _connection);
                 cmd.Parameters.Add(new SqlParameter("@Street", SqlDbType.NVarChar)).Value = street;
                 cmd.Parameters.Add(new SqlParameter("@StartTime", SqlDbType.DateTime)).Value = startTime;
