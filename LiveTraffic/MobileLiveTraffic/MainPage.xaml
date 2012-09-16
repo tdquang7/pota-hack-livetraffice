@@ -66,8 +66,8 @@
 
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem x:Name="btnUpdateTraffic" Text="Update Traffic Status" Click="btnUpdateTraffic_Click" />
-                <shell:ApplicationBarMenuItem x:Name="btnAbout" Text="About" Click="btnAbout_Click" />
                 <shell:ApplicationBarMenuItem x:Name="btnUpdateUser" Text="Update user information" Click="btnUpdateUser_Click"  />
+                <shell:ApplicationBarMenuItem x:Name="btnAbout" Text="About" Click="btnAbout_Click" />
                 <shell:ApplicationBarMenuItem x:Name="btnLogin" Text="Login" Click="btnLogin_Click" />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>

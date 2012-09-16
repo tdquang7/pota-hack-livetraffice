@@ -28,11 +28,11 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="Slow" Height="81" HorizontalAlignment="Left" Margin="248,485,0,0" Name="btnSlow" VerticalAlignment="Top" Width="183" FontSize="20" Click="btnSlow_Click" />
+            <Button Content="Crowded" Height="81" HorizontalAlignment="Left" Margin="248,485,0,0" Name="btnSlow" VerticalAlignment="Top" Width="183" FontSize="20" Click="btnSlow_Click" />
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,19,0,0" Name="textBlock1" Text="Country" VerticalAlignment="Top" />
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,119,0,0" Name="textBlock2" Text="City" VerticalAlignment="Top" />
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,315,0,0" Name="textBlock3" Text="Street" VerticalAlignment="Top" />
-            <Button Content="Busy" FontSize="20" Height="81" HorizontalAlignment="Left" Margin="20,485,0,0" Name="btnBusy" VerticalAlignment="Top" Width="189" Click="btnTrafficJam_Click" />
+            <Button Content="Stuck" FontSize="20" Height="81" HorizontalAlignment="Left" Margin="20,485,0,0" Name="btnBusy" VerticalAlignment="Top" Width="189" Click="btnTrafficJam_Click" />
             <ListBox Height="45" HorizontalAlignment="Left" Margin="20,55,0,0" Name="lbCountry" VerticalAlignment="Top" Width="411" Background="White" />
             <ListBox Background="White" Height="45" HorizontalAlignment="Left" Margin="20,155,0,0" Name="lbCity" VerticalAlignment="Top" Width="411" />
             <ListBox Background="White" Height="45" HorizontalAlignment="Left" Margin="20,351,0,0" Name="lbStreet" VerticalAlignment="Top" Width="411" />
